@@ -1,12 +1,1574 @@
-﻿<Window x:Class="ProyectoIncediosUME_JorgePrieto.MainWindow"
+﻿<Window x:Name="Ventana" x:Class="ProyectoIncediosUME_JorgePrieto.MainWindow"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        
+        Title="VentanaLogin" Height="526" Width="622" Visibility="Visible"  WindowStyle="None" AllowsTransparency="True" Foreground="Black" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+    <Window.Resources>
+        <Storyboard x:Key="Animacion.Login/Registro">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Rectangulo1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.824"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.768"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.672"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.672"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.672"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.756"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.856"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.892"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="Rectangulo1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.83"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.685"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.685"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.685"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.75"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.915"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.98"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.995"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Rectangulo1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-44"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="48"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="48"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="68"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="89"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-26"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-20"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="17.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Rectangulo1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="34"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="43"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="131"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="131"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="107"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="120"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="23.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-20.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-17.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="26"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Rectangulo2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1.091"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1.245"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.914"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.903"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="Rectangulo2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="1.127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="1.127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="1.127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="1.127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="1.127"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="1.167"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.9"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.96"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.007"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Rectangulo2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="16"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-16"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-48"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-156"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-226"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-214"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-187"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-25"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-63"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="12.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Rectangulo2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-19"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-87"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-103"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-141"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-135"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-35"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-52"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-42"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="1.5"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Login">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.822"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.688"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.406"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.198"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.393"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="Login">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="0.85"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="0.827"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0.495"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="0.247"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="0.365"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Login">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="-41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="-72"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-109"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="-105"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="-60"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Login">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.1" Value="32"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.2" Value="37"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="14"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.4" Value="43"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.5" Value="18"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Login">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Registro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="71.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="86.535"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="66.106"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.36"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.638"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.138"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="100.439"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="113.751"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="92.356"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="44.064"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-14.274"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="29.226"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="71.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="86.535"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="66.106"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.36"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.638"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.138"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-3.246"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="29.906"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="32.51"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="3.895"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-18.45"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="25.05"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="71.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="86.535"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="66.106"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.36"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.638"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.138"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="91.625"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="106.624"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="87.269"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.65"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-14.628"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="28.872"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="71.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="86.535"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="66.106"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.36"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.638"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.138"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-9.557"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="24.802"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="28.866"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="1.448"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-18.707"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="24.793"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInvitadoRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInvitadoRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnInvitadoRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-43.435"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="6.557"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="9.004"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-6.575"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.981"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.481"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnInvitadoRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="152.474"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="155.829"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="122.391"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="64.225"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-12.176"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="31.324"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnRegistrar">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnRegistrar">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnRegistrar">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-43.435"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="6.557"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="9.004"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-6.575"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.981"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.481"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnRegistrar">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-69.657"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.798"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-5.825"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-21.838"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-21.13"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="22.37"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnIrLogin">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnIrLogin">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnIrLogin">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-164.814"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-77.696"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-51.151"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-56.02"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5.343"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.843"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnIrLogin">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-139.395"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-80.191"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-46.076"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-48.854"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-23.937"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="19.563"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-86.064"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-12.122"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-23.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5.109"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.609"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="87.431"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="102.219"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="82.935"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="36.519"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-12.086"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="29.914"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-86.564"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-10.824"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-22.509"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="8.657"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="17.657"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path1">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-40.763"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-34.441"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="19.054"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="24.165"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-21.354"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="22.146"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-86.064"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-12.122"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-23.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5.109"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.609"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtContraseñaRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-3.716"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="29.526"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="32.238"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="3.712"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-18.47"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="25.03"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-86.064"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-12.122"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-23.94"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="5.109"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.609"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtUsuarioRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="99.627"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="113.094"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="91.887"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="43.749"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-14.307"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="29.193"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="71.785"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="86.535"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="66.106"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.36"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.638"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.138"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="50.034"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="72.991"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="63.263"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="24.537"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-16.303"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="27.197"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="71.049"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="86.024"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="65.741"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="40.06"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.639"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="15.139"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="41.086"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="65.755"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="58.098"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="21.07"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-16.664"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="26.836"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-87.564"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-10.174"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-21.792"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="6.684"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="16.517"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path2">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="56.026"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="61.459"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="58.079"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="22.244"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-17.506"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="30.994"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.264"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.489"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.635"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.7"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="1.002"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="0.27"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="0.41"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="0.58"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="0.719"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="0.973"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="-86.064"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="-23.033"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="-11.473"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="-23.224"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="4.634"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="16.301"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtEmailRegistro">
+                <EasingDoubleKeyFrame KeyTime="0:0:0.6" Value="49.222"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.7" Value="72.334"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.8" Value="62.793"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.9" Value="24.221"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1" Value="-22.338"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:1.1" Value="30.162"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Rectangulo1">
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#FFEE4958"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#FF499BEE"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Rectangulo2">
+                <EasingColorKeyFrame KeyTime="0:0:0.7" Value="#FF499BEE"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.8" Value="#FFEE4958"/>
+                <EasingColorKeyFrame KeyTime="0:0:0.9" Value="#FFEE4958"/>
+                <EasingColorKeyFrame KeyTime="0:0:1" Value="#FFEE4958"/>
+            </ColorAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Animacion.Registro/Login">
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Rectangulo1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.892"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.856"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.756"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.672"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="0.672"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="0.672"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="0.768"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0.824"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="Rectangulo1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.995"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.98"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.915"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.75"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.685"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="0.685"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="0.685"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="0.785"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0.83"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Rectangulo1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-20"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-26"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="89"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="68"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="48"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="48"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="-58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="-44"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Rectangulo1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-17.5"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-20.5"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="23.5"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="120"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="107"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="131"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="131"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="43"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="34"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Rectangulo2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.903"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.914"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="1.245"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1.091"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="1.091"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="1.091"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="1.091"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="1.091"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1.091"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="Rectangulo2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.007"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.96"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.9"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="1.167"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="1.127"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="1.127"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="1.127"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="1.127"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="1.127"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="1.127"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Rectangulo2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="2"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-63"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-25"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-187"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-214"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="-226"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="-156"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="-48"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="-16"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="16"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Rectangulo2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-42"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-52"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-35"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-135"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-141"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="-103"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="-87"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="-41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="-5"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="-19"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Login">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="0.393"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="0.198"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="0.406"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="0.688"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0.822"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="Login">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="0.365"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="0.247"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="0.495"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="0.827"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="0.85"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="Login">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="-60"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="-105"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="-109"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="-72"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="-41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="Login">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.6" Value="18"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.7" Value="43"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.8" Value="14"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.9" Value="37"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1" Value="32"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Login">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.6" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.7" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="Registro">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Hidden}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:1.1" Value="{x:Static Visibility.Hidden}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.638"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.36"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="66.106"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="86.535"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="71.785"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-14.274"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="44.064"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="92.356"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="113.751"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="100.439"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.638"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.36"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="66.106"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="86.535"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="71.785"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-18.45"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="3.895"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="32.51"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="29.906"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-3.246"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.638"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.36"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="66.106"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="86.535"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="71.785"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-14.628"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.65"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="87.269"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="106.624"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="91.625"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.638"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.36"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="66.106"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="86.535"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="71.785"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-18.707"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="1.448"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="28.866"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="24.802"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-9.557"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnInvitadoRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnInvitadoRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnInvitadoRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.981"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-6.575"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="9.004"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="6.557"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-43.435"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnInvitadoRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-12.176"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="64.225"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="122.391"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="155.829"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="152.474"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnRegistrar">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnRegistrar">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnRegistrar">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.981"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-6.575"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="9.004"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="6.557"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-43.435"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnRegistrar">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-21.13"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-21.838"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-5.825"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.798"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-69.657"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="btnIrLogin">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="btnIrLogin">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="btnIrLogin">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="5.343"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-56.02"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-51.151"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-77.696"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-164.814"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="btnIrLogin">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-23.937"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-48.854"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-46.076"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-80.191"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-139.395"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="5.109"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-23.94"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-12.122"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.033"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-86.064"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-18.086"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="36.519"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="82.935"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="102.219"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="87.431"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="8.657"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-22.509"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-10.824"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.033"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-86.564"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path1">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-27.354"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="24.165"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="19.054"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-34.441"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-40.763"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="5.109"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-23.94"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-12.122"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.033"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-86.064"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtContraseñaRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-18.47"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="3.712"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="32.238"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="29.526"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-3.716"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="5.109"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-23.94"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-12.122"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.033"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-86.064"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtUsuarioRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-14.307"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="43.749"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="91.887"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="113.094"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="99.627"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="rectangle2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="rectangle2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="rectangle2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.638"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.36"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="66.106"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="86.535"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="71.785"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="rectangle2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-16.303"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="24.537"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="63.263"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="72.991"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="50.034"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="lblEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="lblEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="lblEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.639"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="40.06"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="65.741"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="86.024"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="71.049"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="lblEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-16.664"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="21.07"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="58.098"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="65.755"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="41.086"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="path2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="path2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="path2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="6.684"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-21.792"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-10.174"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.033"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-87.564"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="path2">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-19.006"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="22.244"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="58.079"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="61.459"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="56.026"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="txtEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="1.002"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.7"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.635"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.489"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.264"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleY)" Storyboard.TargetName="txtEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="0.973"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="0.719"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="0.58"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="0.41"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="0.27"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="txtEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="4.634"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="-23.224"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="-11.473"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="-23.033"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="-86.064"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="txtEmailRegistro">
+                <SplineDoubleKeyFrame KeyTime="0:0:0.1" Value="-22.338"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.2" Value="24.221"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.3" Value="62.793"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.4" Value="72.334"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:0.5" Value="49.222"/>
+                <SplineDoubleKeyFrame KeyTime="0:0:1.1" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Rectangulo1">
+                <SplineColorKeyFrame KeyTime="0:0:0.3" Value="#FF499BEE"/>
+                <SplineColorKeyFrame KeyTime="0:0:0.4" Value="#FFEE4958"/>
+                <SplineColorKeyFrame KeyTime="0:0:1.1" Value="#FFEE4958"/>
+            </ColorAnimationUsingKeyFrames>
+            <ColorAnimationUsingKeyFrames Storyboard.TargetProperty="(Shape.Fill).(SolidColorBrush.Color)" Storyboard.TargetName="Rectangulo2">
+                <SplineColorKeyFrame KeyTime="0:0:0.1" Value="#FFEE4958"/>
+                <SplineColorKeyFrame KeyTime="0:0:0.2" Value="#FFEE4958"/>
+                <SplineColorKeyFrame KeyTime="0:0:0.3" Value="#FFEE4958"/>
+                <SplineColorKeyFrame KeyTime="0:0:0.4" Value="#FF499BEE"/>
+                <SplineColorKeyFrame KeyTime="0:0:1.1" Value="#FF499BEE"/>
+            </ColorAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="lblUsuarioRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="lblContraseñaRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnInvitadoRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnRegistrar">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="btnIrLogin">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path1">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="txtContraseñaRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="txtUsuarioRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="rectangle2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="lblEmailRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="path2">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="txtEmailRegistro">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.3" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.4" Value="{x:Static Visibility.Visible}"/>
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.5" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+    </Window.Resources>
+
+
+    <Window.Triggers>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnIrRegistro">
+            <BeginStoryboard Storyboard="{StaticResource Animacion.Login/Registro}"/>
+        </EventTrigger>
+        <EventTrigger RoutedEvent="ButtonBase.Click" SourceName="btnIrLogin">
+            <BeginStoryboard x:Name="Animacion_Registro_Login_BeginStoryboard" Storyboard="{StaticResource Animacion.Registro/Login}"/>
+        </EventTrigger>
+    </Window.Triggers>
+
+    <Window.CommandBindings>
+        <CommandBinding Command="local:Comandos.loginInvitado" CanExecute="compruebaLoginInvitado" Executed="loginInvitado"/>
+        <CommandBinding Command="local:Comandos.login" CanExecute="compruebaLogin" Executed="loginUsuario"/>
+        <CommandBinding Command="local:Comandos.registrar" CanExecute="compruebaRegistro" Executed="registroUsuario"/>
+    </Window.CommandBindings>
+
+
+
+
+    <Grid x:Name="grid" Margin="0,0,0,0">
+        <Rectangle x:Name="Rectangulo2" Fill="#FF499BEE" HorizontalAlignment="Left" Height="300" Margin="253,207.5,0,0" Stroke="White" VerticalAlignment="Top" Width="350" RadiusX="30" RadiusY="30" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Rectangle x:Name="Rectangulo1" Fill="#FFEE4958" HorizontalAlignment="Left" Height="400" Margin="6,10,0,0" Stroke="White" VerticalAlignment="Top" Width="500" RadiusY="50" RadiusX="50" RenderTransformOrigin="0.5,0.5">
+            <Rectangle.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Rectangle.RenderTransform>
+        </Rectangle>
+        <Grid x:Name="Registro" Margin="45,44.777,106,53.5" Visibility="Hidden">
+            <Rectangle x:Name="rectangle" Fill="#FF53C17C" HorizontalAlignment="Left" Height="48.286" Margin="-1,55.12,0,0" Stroke="White" VerticalAlignment="Top" Width="131.052" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <Rectangle x:Name="rectangle1" Fill="#FF53C17C" HorizontalAlignment="Left" Height="48.286" Margin="-1,197.12,0,0" Stroke="White" VerticalAlignment="Top" Width="131.052" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Left" x:Name="lblUsuarioRegistro" Height="48.285" Margin="-1,67.192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Usuario" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <TextBlock HorizontalAlignment="Left" x:Name="lblContraseñaRegistro" Height="48.285" Margin="-1,205.763,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Contraseña" RenderTransformOrigin="0.5,0.5" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Button Content="Entrar como invitado" x:Name="btnInvitadoRegistro" HorizontalAlignment="Left" Height="48" Margin="113.579,-16,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5" Command="local:Comandos.loginInvitado">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFEEDF49" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Registrarse" x:Name="btnRegistrar" HorizontalAlignment="Left" Height="48" Margin="113.579,288.214,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5" Command="local:Comandos.registrar" >
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFEEDF49" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Login" x:Name="btnIrLogin" HorizontalAlignment="Left" Height="40" Margin="311,387.723,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5">
+                <Button.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Button.RenderTransform>
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFEEDF49" Offset="0.004"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Path x:Name="path" Data="M194,181.183 L443,181.183" Fill="Gray" HorizontalAlignment="Left" Height="10" Margin="154,93.406,0,0" Stretch="Fill" Stroke="#FF3E3E3E" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <Path x:Name="path1" Data="M194,181.183 L443,181.183" Fill="Gray" HorizontalAlignment="Left" Height="10" Margin="154,235.406,0,0" Stretch="Fill" Stroke="#FF3E3E3E" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.5,8.8">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <PasswordBox x:Name="txtContraseñaRegistro" HorizontalAlignment="Left" Height="27" Margin="154,208.406,0,0" VerticalAlignment="Top" Width="250" Background="{x:Null}" Foreground="Black" FontSize="18" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <PasswordBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </PasswordBox.RenderTransform>
+            </PasswordBox>
+            <TextBox x:Name="txtUsuarioRegistro" HorizontalAlignment="Left" Height="26" Margin="154,67.375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Background="{x:Null}" Foreground="Black" FontSize="18" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+            <Rectangle x:Name="rectangle2" Fill="#FF53C17C" HorizontalAlignment="Left" Height="48.286" Margin="-1,124.151,0,0" Stroke="White" VerticalAlignment="Top" Width="131.052" RenderTransformOrigin="0.5,0.5">
+                <Rectangle.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Rectangle.RenderTransform>
+            </Rectangle>
+            <TextBlock HorizontalAlignment="Left" x:Name="lblEmailRegistro" Height="48.285" Margin="0,136.406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Email" RenderTransformOrigin="0.5,0.5" Background="{x:Null}" >
+                <TextBlock.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBlock.RenderTransform>
+            </TextBlock>
+            <Path x:Name="path2" Data="M194,181.183 L443,181.183" Fill="Gray" HorizontalAlignment="Left" Height="10" Margin="154,162.437,0,0" Stretch="Fill" Stroke="#FF3E3E3E" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.5,0.5">
+                <Path.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Path.RenderTransform>
+            </Path>
+            <TextBox x:Name="txtEmailRegistro" HorizontalAlignment="Left" Height="26" Margin="154,136.406,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Background="{x:Null}" Foreground="Black" FontSize="18" BorderBrush="{x:Null}" RenderTransformOrigin="0.5,0.5">
+                <TextBox.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </TextBox.RenderTransform>
+            </TextBox>
+        </Grid>
+        <Grid x:Name="Login" Margin="45,44.777,116,53.5" RenderTransformOrigin="0.5,0.5">
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Rectangle Fill="#FF53C17C" HorizontalAlignment="Left" Height="48.286" Margin="0,88.12,0,0" Stroke="White" VerticalAlignment="Top" Width="131.052"/>
+            <Rectangle Fill="#FF53C17C" HorizontalAlignment="Left" Height="48.286" Margin="0,184.691,0,0" Stroke="White" VerticalAlignment="Top" Width="131.052"/>
+            <TextBlock HorizontalAlignment="Left" x:Name="lblEmailLogin" Height="48.285" Margin="0,100.192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Email" />
+            <TextBlock HorizontalAlignment="Left" x:Name="lblContraseñaLogin" Height="48.285" Margin="0,196.763,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Contraseña" />
+            <Button Content="Entrar como invitado" x:Name="btnInvitadoLogin" HorizontalAlignment="Left" Height="48" Margin="113.579,0,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="local:Comandos.loginInvitado">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFEEDF49" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Iniciar sesión" x:Name="btnIniciarSesión" HorizontalAlignment="Left" Height="48" Margin="113.579,273.214,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="local:Comandos.login">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFEEDF49" Offset="0"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Button Content="Registro" x:Name="btnIrRegistro" HorizontalAlignment="Left" Height="40" Margin="311,387.723,0,0" VerticalAlignment="Top" Width="150" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode">
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="#FFEEDF49" Offset="0.004"/>
+                        <GradientStop Color="White" Offset="1"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+            </Button>
+            <Path Data="M194,181.183 L443,181.183" Fill="Gray" HorizontalAlignment="Left" Height="10" Margin="155,126.406,0,0" Stretch="Fill" Stroke="#FF3E3E3E" VerticalAlignment="Top" Width="250"/>
+            <Path Data="M194,181.183 L443,181.183" Fill="Gray" HorizontalAlignment="Left" Height="10" Margin="155,226.406,0,0" Stretch="Fill" Stroke="#FF3E3E3E" VerticalAlignment="Top" Width="250" RenderTransformOrigin="0.5,8.8"/>
+            <PasswordBox x:Name="txtContraseñaLogin" HorizontalAlignment="Left" Height="27" Margin="155,199.406,0,0" VerticalAlignment="Top" Width="250" Background="{x:Null}" Foreground="Black" FontSize="18" BorderBrush="{x:Null}"/>
+            <TextBox x:Name="txtEmailLogin" HorizontalAlignment="Left" Height="26" Margin="155,100.375,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="250" Background="{x:Null}" Foreground="Black" FontSize="18" BorderBrush="{x:Null}"/>
+        </Grid>
     </Grid>
 </Window>
