@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
         mc:Ignorable="d"
-        Title="VentanaLogin" Height="526" Width="622" Visibility="Visible"  WindowStyle="None" AllowsTransparency="True" Foreground="Black" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowStartupLocation="CenterScreen" ResizeMode="NoResize">
+        Title="VentanaLogin" Height="526" Width="622" Visibility="Visible"  WindowStyle="None" AllowsTransparency="True" Foreground="Black" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Ventana_Loaded">
     <Window.Resources>
         <Storyboard x:Key="Animacion.Login/Registro">
             <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="Rectangulo1">
@@ -1329,13 +1329,10 @@
     </Window.Triggers>
 
     <Window.CommandBindings>
-        <CommandBinding Command="local:Comandos.loginInvitado" CanExecute="compruebaLoginInvitado" Executed="loginInvitado"/>
-        <CommandBinding Command="local:Comandos.login" CanExecute="compruebaLogin" Executed="loginUsuario"/>
-        <CommandBinding Command="local:Comandos.registrar" CanExecute="compruebaRegistro" Executed="registroUsuario"/>
+        <CommandBinding Command="local:Comandos.loginInvitado" CanExecute="CompruebaLoginInvitado" Executed="LoginInvitado"/>
+        <CommandBinding Command="local:Comandos.login" CanExecute="CompruebaLogin" Executed="LoginUsuario"/>
+        <CommandBinding Command="local:Comandos.registrar" CanExecute="CompruebaRegistro" Executed="RegistroUsuario"/>
     </Window.CommandBindings>
-
-
-
 
     <Grid x:Name="grid" Margin="0,0,0,0">
         <Rectangle x:Name="Rectangulo2" Fill="#FF499BEE" HorizontalAlignment="Left" Height="300" Margin="253,207.5,0,0" Stroke="White" VerticalAlignment="Top" Width="350" RadiusX="30" RadiusY="30" RenderTransformOrigin="0.5,0.5">

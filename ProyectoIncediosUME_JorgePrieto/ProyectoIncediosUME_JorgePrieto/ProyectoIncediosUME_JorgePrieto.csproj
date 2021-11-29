@@ -100,6 +100,24 @@
     <Compile Include="usuario.cs">
       <DependentUpon>ModelPrediccion.tt</DependentUpon>
     </Compile>
+    <Compile Include="VentanaConsultarProbabilidadIncendio.xaml.cs">
+      <DependentUpon>VentanaConsultarProbabilidadIncendio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaGestionUsuarios.xaml.cs">
+      <DependentUpon>VentanaGestionUsuarios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaHistorialIncendios.xaml.cs">
+      <DependentUpon>VentanaHistorialIncendios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaModificarDatosMeteorológicos.xaml.cs">
+      <DependentUpon>VentanaModificarDatosMeteorológicos.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaModificarIncendios.xaml.cs">
+      <DependentUpon>VentanaModificarIncendios.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanaModificarLocalidades.xaml.cs">
+      <DependentUpon>VentanaModificarLocalidades.xaml</DependentUpon>
+    </Compile>
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
     </Compile>
@@ -116,6 +134,30 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VentanaConsultarProbabilidadIncendio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaGestionUsuarios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaHistorialIncendios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaModificarDatosMeteorológicos.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaModificarIncendios.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanaModificarLocalidades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaPrincipal.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -159,6 +201,7 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Resource Include="escudo.png" />
     <Content Include="ModelPrediccion.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>ModelPrediccion.edmx</DependentUpon>

@@ -20,6 +20,7 @@ namespace ProyectoIncediosUME_JorgePrieto
     /// </summary>
     public partial class MainWindow : Window
     {
+        Boolean cargado = false;
         ClaseConsultas consulta = new ClaseConsultas();
 
         public MainWindow()
@@ -27,14 +28,26 @@ namespace ProyectoIncediosUME_JorgePrieto
             InitializeComponent();
         }
 
-      
-
-        private void compruebaLoginInvitado(Object sender, CanExecuteRoutedEventArgs e)
+        private void Ventana_Loaded(object sender, RoutedEventArgs e)
         {
-            e.CanExecute = true;
+            cargado = true;
         }
 
-        private void loginInvitado(Object sender, ExecutedRoutedEventArgs e)
+
+        private void CompruebaLoginInvitado(Object sender, CanExecuteRoutedEventArgs e)
+        {
+            if (cargado)
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
+
+        }
+
+        private void LoginInvitado(Object sender, ExecutedRoutedEventArgs e)
         {
             ClaseLogin InfoUsuario = new ClaseLogin(false, "invitado");
             VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
@@ -43,12 +56,19 @@ namespace ProyectoIncediosUME_JorgePrieto
         }
 
 
-        private void compruebaLogin(Object sender, CanExecuteRoutedEventArgs e)
+        private void CompruebaLogin(Object sender, CanExecuteRoutedEventArgs e)
         {
-            e.CanExecute = true;
+            if (cargado)
+            {
+                e.CanExecute = true;
+            }
+            else
+            {
+                e.CanExecute = false;
+            }
         }
 
-        private void loginUsuario(Object sender, ExecutedRoutedEventArgs e)
+        private void LoginUsuario(Object sender, ExecutedRoutedEventArgs e)
         {
             string email = this.txtEmailLogin.Text.Trim();
             string contraseña = this.txtContraseñaLogin.Password.Trim();
@@ -58,58 +78,102 @@ namespace ProyectoIncediosUME_JorgePrieto
             }
             else
             {
-                if (this.consulta.consultaUsuarioLogin(email, contraseña))
+                Boolean[] resultado = this.consulta.consultaUsuarioLogin(email, contraseña);
+
+                if (resultado[0])
                 {
-                    ClaseLogin InfoUsuario = new ClaseLogin(true, email);
-                    VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
-                    ventanaMain.Show();
-                    this.Close();
+                    if (resultado[1])
+                    {
+                        if (resultado[2])
+                        {
+                            String nombreUsuario = consulta.consultarNombreUsuario(email);
+
+                            ClaseLogin InfoUsuario = new ClaseLogin(true, nombreUsuario);
+                            VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
+                            ventanaMain.Show();
+                            this.Close();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Su cuenta está desactivada");
+                        }
+
+                    }
+                    else
+                    {
+                        MessageBox.Show("Contraseña incorrecta");
+                    }
+                
                 }
                 else
                 {
-                    MessageBox.Show("Contraseña, correo erroneos o cuenta desactivada");
+
+                    MessageBox.Show("El correo electronico no existe");
+
                 }
             }
         }
 
 
 
-        private void compruebaRegistro(Object sender, CanExecuteRoutedEventArgs e)
+
+        private void CompruebaRegistro(Object sender, CanExecuteRoutedEventArgs e)
         {
             e.CanExecute = true;
         }
 
-        private void registroUsuario(Object sender, ExecutedRoutedEventArgs e)
+        private void RegistroUsuario(Object sender, ExecutedRoutedEventArgs e)
         {
             string email = this.txtEmailRegistro.Text.Trim();
             string usuario = this.txtUsuarioRegistro.Text.Trim();
             string contraseña = this.txtContraseñaRegistro.Password.Trim();
-            if (email.Length == 0 | usuario.Length == 0 | contraseña.Length == 0 )
+            if (email.Length == 0 | usuario.Length == 0 | contraseña.Length == 0)
             {
                 MessageBox.Show("Rellene todos los campos para realizar el registro");
             }
             else
             {
-                if (this.consulta.consultaUsuarioRegistro(email))
+                if(EmailEsValido(email))
                 {
-                    MessageBox.Show("Email en uso");
+                    if (this.consulta.consultaUsuarioRegistro(email))
+                    {
+                        MessageBox.Show("Email en uso");
+                    }
+                    else
+                    {
+                        usuario UsuarioAInsertar = new usuario();
+
+                        UsuarioAInsertar.activo = false;
+                        UsuarioAInsertar.contrasenaUsuario = contraseña;
+                        UsuarioAInsertar.correoUsuario = email;
+                        UsuarioAInsertar.nombreUsuario = usuario;
+
+                        this.consulta.insertarUsuario(UsuarioAInsertar);
+
+                        MessageBox.Show("Cuenta creada, por favor espere a que una administrador la active");
+                    }
                 }
                 else
                 {
-                    usuario UsuarioAInsertar = new usuario();
-
-                    UsuarioAInsertar.activo = false;
-                    UsuarioAInsertar.contrasenaUsuario = contraseña;
-                    UsuarioAInsertar.correoUsuario = email;
-                    UsuarioAInsertar.nombreUsuario = usuario;
-
-                    this.consulta.insertarUsuario(UsuarioAInsertar);
-
-                    MessageBox.Show("Cuenta creada, por favor espere a que una administrador la active");
+                    MessageBox.Show("El formato de su email no es válido");
                 }
+                
             }
         }
 
-    }
 
+        private bool EmailEsValido(string email)
+        {
+            try
+            {
+                var addr = new System.Net.Mail.MailAddress(email);
+                return addr.Address == email;
+            }
+            catch
+            {
+                return false;
+            }
+
+        }
+    }
 }

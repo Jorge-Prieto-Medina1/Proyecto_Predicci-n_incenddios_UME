@@ -9,12 +9,12 @@ namespace ProyectoIncediosUME_JorgePrieto
     public class ClaseLogin
     {
         public Boolean login { get; set; }
-        public String email { get; set; }
+        public String nombreUsuario { get; set; }
 
-        public ClaseLogin(Boolean Login, String Email)
+        public ClaseLogin(Boolean Login, String NombreUsuario)
         {
             this.login = Login;
-            this.email = Email;
+            this.nombreUsuario = NombreUsuario;
         }
     }
 }

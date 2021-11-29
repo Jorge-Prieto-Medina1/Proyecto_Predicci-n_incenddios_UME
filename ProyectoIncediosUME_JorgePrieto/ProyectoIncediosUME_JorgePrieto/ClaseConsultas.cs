@@ -9,27 +9,66 @@ namespace ProyectoIncediosUME_JorgePrieto
     public class ClaseConsultas
     {
 
-        public Boolean consultaUsuarioLogin(String correo, String contraseña)
+        public Boolean[] consultaUsuarioLogin(String Correo, String Contraseña)
         {
-            Boolean resultado = false;
+            Boolean [] resultado  = new Boolean [3];
             using (prediccion_incendios_Entities baseDeDatos = new prediccion_incendios_Entities())
             {
-                var consulta = from busqueda in baseDeDatos.usuario
-                               where busqueda.activo == true  &
-                               busqueda.correoUsuario.Contains (correo) &
-                               busqueda.contrasenaUsuario.Contains (contraseña)
-                               select new { nombreUuario = busqueda.nombreUsuario };
+                var consultaCorreo = from busqueda in baseDeDatos.usuario
+                                where busqueda.correoUsuario.Contains(Correo)
+                                select new {busqueda.contrasenaUsuario, busqueda.activo};
 
-                if (consulta.Count() != 0)
+
+                if (consultaCorreo.Count() != 0)
                 {
-                    resultado = true;
+                    resultado[0] = true;
+
+                    if (Contraseña.Equals(consultaCorreo.FirstOrDefault().contrasenaUsuario))
+                    {
+                        resultado[1] = true;
+                        if (consultaCorreo.FirstOrDefault().activo == true)
+                        {
+                            resultado[2] = true;
+                        }
+                        else
+                        {
+                            resultado[2] = false;
+                        }
+                    }
+                    else
+                    {
+                        resultado[1] = false;
+                        resultado[2] = false;
+                    }
                 }
-               
+                else
+                {
+                    resultado[0] = false;
+                    resultado[1] = false;
+                    resultado[2] = false;
+                }
+
+
             }
 
             return resultado;          
         }
 
+        public String consultarNombreUsuario(String Correo)
+        {
+            String usuario = "";
+            Boolean[] resultado = new Boolean[3];
+            using (prediccion_incendios_Entities baseDeDatos = new prediccion_incendios_Entities())
+            {
+                var consultaCorreo = from busqueda in baseDeDatos.usuario
+                                     where busqueda.correoUsuario.Contains(Correo)
+                                     select new { busqueda.nombreUsuario};
+
+                usuario = consultaCorreo.FirstOrDefault().nombreUsuario;
+            }
+
+                return usuario;
+        }
 
         public Boolean consultaUsuarioRegistro(String correo)
         {
