@@ -79,7 +79,7 @@ namespace ProyectoIncediosUME_JorgePrieto
 
         private void AccederVentanaGestiónUsuarios(Object sender, ExecutedRoutedEventArgs e)
         {
-            VentanaGestionUsuarios ventanUsuarios = new VentanaGestionUsuarios();
+            VentanaGestionUsuarios ventanUsuarios = new VentanaGestionUsuarios(infoUsuario);
             this.Hide();
             ventanUsuarios.ShowDialog();
             this.Show();
@@ -128,7 +128,7 @@ namespace ProyectoIncediosUME_JorgePrieto
         private void Salir(Object sender, ExecutedRoutedEventArgs e)
         {
             
-            MessageBoxResult resultadoSalir = MessageBox.Show("¿Seguro que de sea salir?", "Aviso", MessageBoxButton.YesNo);
+            MessageBoxResult resultadoSalir = MessageBox.Show("¿Seguro que desea salir?", "Aviso", MessageBoxButton.YesNo);
 
             if (resultadoSalir == MessageBoxResult.Yes)
             {

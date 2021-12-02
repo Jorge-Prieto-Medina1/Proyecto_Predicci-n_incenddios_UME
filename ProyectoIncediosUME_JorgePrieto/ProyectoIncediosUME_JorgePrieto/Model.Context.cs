@@ -13,10 +13,10 @@ namespace ProyectoIncediosUME_JorgePrieto
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class prediccion_incendios_Entities : DbContext
+    public partial class prediccionIncendiosEntites : DbContext
     {
-        public prediccion_incendios_Entities()
-            : base("name=prediccion_incendios_Entities")
+        public prediccionIncendiosEntites()
+            : base("name=prediccionIncendiosEntites")
         {
         }
     

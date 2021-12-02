@@ -49,7 +49,7 @@ namespace ProyectoIncediosUME_JorgePrieto
 
         private void LoginInvitado(Object sender, ExecutedRoutedEventArgs e)
         {
-            ClaseLogin InfoUsuario = new ClaseLogin(false, "invitado");
+            ClaseLogin InfoUsuario = new ClaseLogin(false,"invitado", "");
             VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
             ventanaMain.Show();
             this.Close();
@@ -88,7 +88,7 @@ namespace ProyectoIncediosUME_JorgePrieto
                         {
                             String nombreUsuario = consulta.consultarNombreUsuario(email);
 
-                            ClaseLogin InfoUsuario = new ClaseLogin(true, nombreUsuario);
+                            ClaseLogin InfoUsuario = new ClaseLogin(true,nombreUsuario, email);
                             VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
                             ventanaMain.Show();
                             this.Close();
@@ -143,7 +143,7 @@ namespace ProyectoIncediosUME_JorgePrieto
                     {
                         usuario UsuarioAInsertar = new usuario();
 
-                        UsuarioAInsertar.activo = false;
+                        UsuarioAInsertar.activo = "Inactivo";
                         UsuarioAInsertar.contrasenaUsuario = contraseña;
                         UsuarioAInsertar.correoUsuario = email;
                         UsuarioAInsertar.nombreUsuario = usuario;

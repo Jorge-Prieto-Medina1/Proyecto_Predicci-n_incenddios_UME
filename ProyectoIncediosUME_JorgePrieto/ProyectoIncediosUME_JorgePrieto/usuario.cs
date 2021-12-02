@@ -18,6 +18,6 @@ namespace ProyectoIncediosUME_JorgePrieto
         public string nombreUsuario { get; set; }
         public string correoUsuario { get; set; }
         public string contrasenaUsuario { get; set; }
-        public Nullable<bool> activo { get; set; }
+        public string activo { get; set; }
     }
 }

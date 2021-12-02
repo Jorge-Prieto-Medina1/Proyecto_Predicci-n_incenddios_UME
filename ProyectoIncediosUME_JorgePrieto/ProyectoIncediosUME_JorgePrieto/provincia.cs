@@ -16,16 +16,12 @@ namespace ProyectoIncediosUME_JorgePrieto
     {
         public provincia()
         {
-            this.datoMeteorologico = new HashSet<datoMeteorologico>();
-            this.Incendio = new HashSet<Incendio>();
             this.localidad = new HashSet<localidad>();
         }
     
         public int idProvincia { get; set; }
         public string nombreProvincia { get; set; }
     
-        public virtual ICollection<datoMeteorologico> datoMeteorologico { get; set; }
-        public virtual ICollection<Incendio> Incendio { get; set; }
         public virtual ICollection<localidad> localidad { get; set; }
     }
 }

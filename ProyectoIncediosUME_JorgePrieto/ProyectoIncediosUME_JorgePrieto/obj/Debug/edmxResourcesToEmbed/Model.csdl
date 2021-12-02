@@ -99,7 +99,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <EntityContainer Name="prediccion_incendiosEntitiesData" annotation:LazyLoadingEnabled="true">
+  <EntityContainer Name="prediccionIncendiosEntites" annotation:LazyLoadingEnabled="true">
     <EntitySet Name="datoMeteorologico" EntityType="Self.datoMeteorologico" />
     <EntitySet Name="Incendio" EntityType="Self.Incendio" />
     <EntitySet Name="localidad" EntityType="Self.localidad" />

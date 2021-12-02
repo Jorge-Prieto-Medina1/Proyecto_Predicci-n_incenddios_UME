@@ -16,13 +16,11 @@ namespace ProyectoIncediosUME_JorgePrieto
     {
         public int idDato { get; set; }
         public int idLocalidad { get; set; }
-        public int idProvincia { get; set; }
         public Nullable<double> temperaturaMedia { get; set; }
         public Nullable<double> humedadMedia { get; set; }
         public Nullable<System.DateTime> fechaDeInicio { get; set; }
         public Nullable<System.DateTime> fechaDeFinalizacion { get; set; }
     
         public virtual localidad localidad { get; set; }
-        public virtual provincia provincia { get; set; }
     }
 }

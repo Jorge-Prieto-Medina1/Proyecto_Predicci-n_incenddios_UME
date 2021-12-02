@@ -28,5 +28,11 @@ namespace ProyectoIncediosUME_JorgePrieto
         public static readonly RoutedUICommand consultarProbabilidadesDeIncendio = new RoutedUICommand();
 
         public static readonly RoutedUICommand modificarLocalidades = new RoutedUICommand();
+
+        public static readonly RoutedUICommand volverAtras = new RoutedUICommand();
+
+        public static readonly RoutedUICommand activarDesactivarUsuario = new RoutedUICommand();
+
+        public static readonly RoutedUICommand eliminarUsuario = new RoutedUICommand();
     }
 }

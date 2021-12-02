@@ -10,8 +10,8 @@ idUsuario int IDENTITY(1, 1),
 nombreUsuario VARCHAR (80),
 correoUsuario VARCHAR (80),
 contrasenaUsuario VARCHAR (80),
-activo Bit,
-PRIMARY KEY (idUsuario)
+activo VARCHAR (80),
+PRIMARY KEY (correoUsuario)
 );
 
 GO
@@ -76,7 +76,9 @@ GO
 
 
 
-INSERT INTO Usuario VALUES ('jorge', 'jorge@hotmail.com', '1234', 1);
+INSERT INTO Usuario VALUES ('jorge', 'jorge@hotmail.com', '1234', 'Activo');
+INSERT INTO Usuario VALUES ('123', '123', '123', 'Activo');
 
+delete from usuario where nombreUsuario = 'jorge';
 
 Go
