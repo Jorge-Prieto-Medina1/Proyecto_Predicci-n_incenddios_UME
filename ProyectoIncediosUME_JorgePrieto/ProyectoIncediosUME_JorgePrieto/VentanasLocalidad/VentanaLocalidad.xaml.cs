@@ -118,9 +118,9 @@ namespace ProyectoIncediosUME_JorgePrieto.VentanasLocalidad
             {
                 int fila = this.dgrLocalidades.SelectedIndex;
                 localidad LocalidadAModificar = this.listaLocalidades[fila];
-                VentanaModificarLocalidades añadirLocalidad = new VentanaModificarLocalidades(LocalidadAModificar);
+                VentanaModificarLocalidades modificarLocalidad = new VentanaModificarLocalidades(LocalidadAModificar);
                 this.Hide();
-                añadirLocalidad.ShowDialog();
+                modificarLocalidad.ShowDialog();
                 this.Show();
                 cargarDgrLocalidades();
 

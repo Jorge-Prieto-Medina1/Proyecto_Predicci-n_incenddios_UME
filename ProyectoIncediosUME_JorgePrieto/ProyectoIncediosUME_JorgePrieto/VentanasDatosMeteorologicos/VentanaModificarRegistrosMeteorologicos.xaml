@@ -1,11 +1,11 @@
-﻿<Window x:Class="ProyectoIncediosUME_JorgePrieto.VentanaIncendios"
+﻿<Window x:Class="ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos.VentanaModificarRegistrosMeteorologicos"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
+        xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos"
         mc:Ignorable="d"
-        Title="VentanaModificarIncendios" Height="450" Width="800">
+        Title="VentanaModificarRegistrosMeteorologicos" Height="450" Width="800">
     <Grid>
         
     </Grid>

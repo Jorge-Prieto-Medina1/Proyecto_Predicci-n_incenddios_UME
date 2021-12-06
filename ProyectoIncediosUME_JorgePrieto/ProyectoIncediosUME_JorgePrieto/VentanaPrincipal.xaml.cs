@@ -1,4 +1,6 @@
 ﻿using ProyectoIncediosUME_JorgePrieto.Clases;
+using ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos;
+using ProyectoIncediosUME_JorgePrieto.VentanasIncendios;
 using ProyectoIncediosUME_JorgePrieto.VentanasLocalidad;
 using System;
 using System.Collections.Generic;
@@ -76,8 +78,9 @@ namespace ProyectoIncediosUME_JorgePrieto
         private void AccederVentanaGestiónUsuarios(Object sender, ExecutedRoutedEventArgs e)
         {
             VentanaGestionUsuarios ventanUsuarios = new VentanaGestionUsuarios(infoUsuario);
-            ventanUsuarios.Show();
-            this.Close();
+            this.Hide();
+            ventanUsuarios.ShowDialog();
+            this.Show();
         }
 
         private void AccederVentanaHistorialDeIncendios(Object sender, ExecutedRoutedEventArgs e)
@@ -90,18 +93,16 @@ namespace ProyectoIncediosUME_JorgePrieto
 
         private void AccederVentanaModificarIncendios(Object sender, ExecutedRoutedEventArgs e)
         {
-            VentanaModificarIncendios ventanaModificarIncendios = new VentanaModificarIncendios();
-            this.Hide();
-            ventanaModificarIncendios.ShowDialog();
-            this.Show();
+            VentanaRegistrosIncendios ventanIncendios = new VentanaRegistrosIncendios(infoUsuario);
+            ventanIncendios.Show();
+            this.Close();
         }
 
         private void AccederVentanaModificarDatosMeteorologicos(Object sender, ExecutedRoutedEventArgs e)
         {
-            VentanaModificarDatosMeteorológicos ventanDatosMeteorologicos = new VentanaModificarDatosMeteorológicos();
-            this.Hide();
-            ventanDatosMeteorologicos.ShowDialog();
-            this.Show();
+            VentanaRegistrosMeteorologicos ventanDatosMeteorologicos = new VentanaRegistrosMeteorologicos(infoUsuario);
+            ventanDatosMeteorologicos.Show();
+            this.Close();
         }
 
         private void AccederVentanaProbabilidadDeIncendio(Object sender, ExecutedRoutedEventArgs e)

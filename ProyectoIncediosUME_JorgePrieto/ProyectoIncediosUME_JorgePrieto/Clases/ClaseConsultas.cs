@@ -193,7 +193,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
 
                 if (consultaCorreo.Count() != 0)
                 {
-                    resultado = true; 
+                    resultado = true;
                 }
                 else
                 {
@@ -208,8 +208,8 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
                 var consultaDatoMeteorologico = from busqueda in baseDeDatos.datoMeteorologico
-                                    where busqueda.idLocalidad == IdLocalidad
-                                    select new { busqueda.idDato };
+                                                where busqueda.idLocalidad == IdLocalidad
+                                                select new { busqueda.idDato };
 
                 if (consultaDatoMeteorologico.Count() != 0)
                 {
@@ -223,7 +223,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                     }
 
                 }
-                   
+
                 localidad LocalidadAEliminar = baseDeDatos.localidad.First(x => x.idLocalidad == IdLocalidad);
                 baseDeDatos.localidad.Remove(LocalidadAEliminar);
                 baseDeDatos.SaveChanges();
@@ -267,8 +267,8 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
                 var consultaNombre = from busqueda in baseDeDatos.provincia
-                                 where busqueda.idProvincia == IdProvincia
-                                 select new { busqueda.nombreProvincia };
+                                     where busqueda.idProvincia == IdProvincia
+                                     select new { busqueda.nombreProvincia };
 
                 String nombreProvincia = consultaNombre.FirstOrDefault().nombreProvincia;
 
@@ -282,11 +282,11 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
                 var consultaNombre = from busqueda in baseDeDatos.localidad
-                                    where busqueda.nombreLocalidad.Contains(nombreLocalidad) && 
-                                    busqueda.idProvincia == IdProvincia
+                                     where busqueda.nombreLocalidad.Contains(nombreLocalidad) &&
+                                     busqueda.idProvincia == IdProvincia
                                      select new { busqueda.idLocalidad };
                 var listaDeLocalidades = consultaNombre.ToList();
-                if(listaDeLocalidades.Count != 0)
+                if (listaDeLocalidades.Count != 0)
                 {
                     resultado = true;
                 }
@@ -295,7 +295,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
             return resultado;
         }
 
-        public void insertarLocalidad (localidad localidadInsetar)
+        public void insertarLocalidad(localidad localidadInsetar)
         {
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
@@ -320,9 +320,136 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                 baseDeDatos.SaveChanges();
             }
         }
-        
 
+        public List<Incendio> obtenerIncendios()
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                List<Incendio> listaIncendios;
+                listaIncendios = baseDeDatos.Incendio.OrderBy(x => x.fechaDeInicio).ToList();
+                return listaIncendios;
+            }
+
+        }
+
+        public String[] buscarNombreLocalidadPrivincia(int IdLocalidad)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                String[] nombres = new string[2];
+                var consultaNombreLocalidad = from busqueda in baseDeDatos.localidad
+                                              where busqueda.idLocalidad == IdLocalidad
+                                              select new { busqueda.nombreLocalidad, busqueda.idProvincia };
+
+                nombres[0] = consultaNombreLocalidad.FirstOrDefault().nombreLocalidad;
+                int IdProvincia = consultaNombreLocalidad.FirstOrDefault().idProvincia;
+
+                var consultaNombreProvincia = from busqueda in baseDeDatos.provincia
+                                              where busqueda.idProvincia == IdProvincia
+                                              select new { busqueda.nombreProvincia };
+
+                nombres[1] = consultaNombreProvincia.FirstOrDefault().nombreProvincia;
+
+                return nombres;
+            }
+        }
+
+        public void eliminarIncendio(int IdIncendio)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+
+                Incendio IncendioAEliminar = baseDeDatos.Incendio.First(x => x.idIncendio == IdIncendio);
+                baseDeDatos.Incendio.Remove(IncendioAEliminar);
+                baseDeDatos.SaveChanges();
+            }
+
+        }
+
+        public List<String> cargarLocalidades(String provincia)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                var consultaProvincia = from busqueda in baseDeDatos.provincia
+                                        where busqueda.nombreProvincia.Equals(provincia)
+                                        select new { busqueda.idProvincia };
+                var IdProvincia = consultaProvincia.First().idProvincia;
+
+                var consultaLocalidad = from busqueda in baseDeDatos.localidad
+                                        where busqueda.idProvincia == IdProvincia
+                                        select new { busqueda.nombreLocalidad };
+
+                List<String> listaLocalidades = new List<String>();
+                foreach (var localidad in consultaLocalidad)
+                {
+                    listaLocalidades.Add(localidad.nombreLocalidad);
+                }
+                return listaLocalidades;
+            }
+
+        }
+
+        public int buscarIdLocalidad(int idProvincia, String localidad)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                var consultaLocalidad = from busqueda in baseDeDatos.localidad
+                                        where busqueda.idProvincia == idProvincia
+                                        && busqueda.nombreLocalidad.Equals(localidad)
+                                        select new { busqueda.idLocalidad};
+                int IdLocalidad = consultaLocalidad.First().idLocalidad;
+
+
+                return IdLocalidad;
+            }
+
+        }
+
+        public void insertarIncendio(Incendio incendioInsertar)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                baseDeDatos.Incendio.Add(incendioInsertar);
+                baseDeDatos.SaveChanges();
+            }
+        }
+
+        public void modificarIncendio(Incendio incendioModificado)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                Incendio incendioOriginal = baseDeDatos.Incendio.First(x => x.idLocalidad == incendioModificado.idLocalidad);
+                incendioOriginal.temperaturaMedia = incendioModificado.temperaturaMedia;
+                incendioOriginal.humedadMedia = incendioModificado.humedadMedia;
+                incendioOriginal.hectareasQuemadas = incendioModificado.hectareasQuemadas;
+                incendioOriginal.fechaDeInicio = incendioModificado.fechaDeInicio;
+                incendioOriginal.fechaDeExtinción = incendioModificado.fechaDeExtinción;
+                baseDeDatos.SaveChanges();
+            }
+        }
+
+        public List<datoMeteorologico> ObtenerDatosClimatologicos()
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                List<datoMeteorologico> listaDatos;
+                listaDatos = baseDeDatos.datoMeteorologico.OrderBy(x => x.fechaDeInicio).ToList();
+                return listaDatos;
+            }
+
+        }
+
+        public void eliminarDato(int IdDato)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+
+                datoMeteorologico DatoAEliminar = baseDeDatos.datoMeteorologico.First(x => x.idDato == IdDato);
+                baseDeDatos.datoMeteorologico.Remove(DatoAEliminar);
+                baseDeDatos.SaveChanges();
+            }
+
+        }
     }
-
 
 }

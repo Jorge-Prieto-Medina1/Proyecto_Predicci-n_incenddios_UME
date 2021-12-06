@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProyectoIncediosUME_JorgePrieto
+namespace ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos
 {
     /// <summary>
-    /// Lógica de interacción para VentanaModificarDatosMeteorológicos.xaml
+    /// Lógica de interacción para VentanaAñadiorRegistrosMeteorologicos.xaml
     /// </summary>
-    public partial class VentanaModificarDatosMeteorológicos : Window
+    public partial class VentanaAñadiorRegistrosMeteorologicos : Window
     {
-        public VentanaModificarDatosMeteorológicos()
+        public VentanaAñadiorRegistrosMeteorologicos()
         {
             InitializeComponent();
         }

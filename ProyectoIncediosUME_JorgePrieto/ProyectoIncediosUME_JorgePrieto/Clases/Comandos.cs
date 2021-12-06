@@ -40,5 +40,19 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
         public static readonly RoutedUICommand añadirLocalidad = new RoutedUICommand();
 
         public static readonly RoutedUICommand modificarLocalidad = new RoutedUICommand();
+
+        public static readonly RoutedUICommand añadirIncendio = new RoutedUICommand();
+
+        public static readonly RoutedUICommand modificarIncendio = new RoutedUICommand();
+
+        public static readonly RoutedUICommand eliminarIncendio = new RoutedUICommand();
+
+        public static readonly RoutedUICommand añadirDato = new RoutedUICommand();
+
+        public static readonly RoutedUICommand modificarDato = new RoutedUICommand();
+
+        public static readonly RoutedUICommand eliminarDato = new RoutedUICommand();
+
+
     }
 }

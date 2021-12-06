@@ -130,8 +130,13 @@ INSERT INTO localidad Values ( 1, 'Alcalá del Júcar','15', '20', '30', '10', '
 INSERT INTO localidad Values ( 2, 'Denia','17', '22', '30', '14', '14', '32', '5', '20');
 go
 
-INSERT INTO datoMeteorologico Values ( 2, '17', '22', '18-06-12 10:34:09 PM', '18-06-12 10:34:09 PM');
+INSERT INTO datoMeteorologico Values ( 2, '17', '22', '18-06-12', '18-06-12');
 go
+
+INSERT INTO Incendio Values ( 2, '2000', '17', '22', '18-06-12', '18-06-12');
+go
+
+delete from datoMeteorologico where idLocalidad = 2;
 
 INSERT INTO Usuario VALUES ('jorge', 'jorge@hotmail.com', '1234', 'Activo');
 INSERT INTO Usuario VALUES ('123', '123', '123', 'Activo');
