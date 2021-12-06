@@ -1,4 +1,6 @@
-﻿using System;
+﻿using ProyectoIncediosUME_JorgePrieto.Clases;
+using ProyectoIncediosUME_JorgePrieto.VentanasLocalidad;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -35,12 +37,6 @@ namespace ProyectoIncediosUME_JorgePrieto
                 this.btnModificarDatosMeteorológicos.Visibility = Visibility.Visible;
                 this.btnModificarHistoralIncendios.Visibility = Visibility.Visible;
                 this.btnModificarLocalidades.Visibility = Visibility.Visible;
-
-                MessageBox.Show("Bienvenido "+infoUsuario.nombreUsuario);
-            }
-            else
-            {
-                MessageBox.Show("Bienvenido invitado");
             }
             
         }
@@ -80,9 +76,8 @@ namespace ProyectoIncediosUME_JorgePrieto
         private void AccederVentanaGestiónUsuarios(Object sender, ExecutedRoutedEventArgs e)
         {
             VentanaGestionUsuarios ventanUsuarios = new VentanaGestionUsuarios(infoUsuario);
-            this.Hide();
-            ventanUsuarios.ShowDialog();
-            this.Show();
+            ventanUsuarios.Show();
+            this.Close();
         }
 
         private void AccederVentanaHistorialDeIncendios(Object sender, ExecutedRoutedEventArgs e)
@@ -119,10 +114,9 @@ namespace ProyectoIncediosUME_JorgePrieto
 
         private void AccederVentanaModificarLocalidades(Object sender, ExecutedRoutedEventArgs e)
         {
-            VentanaModificarLocalidades ventanaModificarLocalidades = new VentanaModificarLocalidades();
-            this.Hide();
-            ventanaModificarLocalidades.ShowDialog();
-            this.Show();
+            VentanaLocalidad ventanaModificarLocalidades = new VentanaLocalidad(infoUsuario);
+            ventanaModificarLocalidades.Show();
+            this.Close();
         }
 
         private void Salir(Object sender, ExecutedRoutedEventArgs e)

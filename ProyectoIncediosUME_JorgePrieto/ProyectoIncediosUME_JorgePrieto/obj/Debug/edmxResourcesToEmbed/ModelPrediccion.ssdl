@@ -6,9 +6,8 @@
     </Key>
     <Property Name="idDato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idLocalidad" Type="int" Nullable="false" />
-    <Property Name="idProvincia" Type="int" Nullable="false" />
-    <Property Name="temperaturaMedia" Type="float" />
-    <Property Name="humedadMedia" Type="float" />
+    <Property Name="temperaturaMedia" Type="int" />
+    <Property Name="humedadMedia" Type="int" />
     <Property Name="fechaDeInicio" Type="date" />
     <Property Name="fechaDeFinalizacion" Type="date" />
   </EntityType>
@@ -18,10 +17,9 @@
     </Key>
     <Property Name="idIncendio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idLocalidad" Type="int" Nullable="false" />
-    <Property Name="idProvincia" Type="int" Nullable="false" />
     <Property Name="hectareasQuemadas" Type="int" />
-    <Property Name="temperaturaMedia" Type="float" />
-    <Property Name="humedadMedia" Type="float" />
+    <Property Name="temperaturaMedia" Type="int" />
+    <Property Name="humedadMedia" Type="int" />
     <Property Name="fechaDeInicio" Type="date" />
     <Property Name="fechaDeExtinción" Type="date" />
   </EntityType>
@@ -32,15 +30,14 @@
     <Property Name="idLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="idProvincia" Type="int" Nullable="false" />
     <Property Name="nombreLocalidad" Type="varchar" MaxLength="80" />
-    <Property Name="fotoLocalidad" Type="image" />
-    <Property Name="temperaturaMediaPrimavera" Type="float" />
-    <Property Name="humedadMediaPrimavera" Type="float" />
-    <Property Name="temperaturaMediaVerano" Type="float" />
-    <Property Name="humedadMediaVerano" Type="float" />
-    <Property Name="temperaturaMediaOtoño" Type="float" />
-    <Property Name="humedadMediaOtoño" Type="float" />
-    <Property Name="temperaturaMediaInvierno" Type="float" />
-    <Property Name="humedadMediaInvierno" Type="float" />
+    <Property Name="temperaturaMediaPrimavera" Type="int" />
+    <Property Name="humedadMediaPrimavera" Type="int" />
+    <Property Name="temperaturaMediaVerano" Type="int" />
+    <Property Name="humedadMediaVerano" Type="int" />
+    <Property Name="temperaturaMediaOtoño" Type="int" />
+    <Property Name="humedadMediaOtoño" Type="int" />
+    <Property Name="temperaturaMediaInvierno" Type="int" />
+    <Property Name="humedadMediaInvierno" Type="int" />
   </EntityType>
   <EntityType Name="provincia">
     <Key>
@@ -51,13 +48,13 @@
   </EntityType>
   <EntityType Name="usuario">
     <Key>
-      <PropertyRef Name="idUsuario" />
+      <PropertyRef Name="correoUsuario" />
     </Key>
     <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
     <Property Name="nombreUsuario" Type="varchar" MaxLength="80" />
-    <Property Name="correoUsuario" Type="varchar" MaxLength="80" />
+    <Property Name="correoUsuario" Type="varchar" MaxLength="80" Nullable="false" />
     <Property Name="contrasenaUsuario" Type="varchar" MaxLength="80" />
-    <Property Name="activo" Type="bit" />
+    <Property Name="activo" Type="varchar" MaxLength="80" />
   </EntityType>
   <Association Name="FK__datoMeteo__idLoc__2B3F6F97">
     <End Role="localidad" Type="Self.localidad" Multiplicity="1" />
@@ -71,19 +68,7 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
-  <Association Name="FK__datoMeteo__idPro__2C3393D0">
-    <End Role="provincia" Type="Self.provincia" Multiplicity="1" />
-    <End Role="datoMeteorologico" Type="Self.datoMeteorologico" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="provincia">
-        <PropertyRef Name="idProvincia" />
-      </Principal>
-      <Dependent Role="datoMeteorologico">
-        <PropertyRef Name="idProvincia" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Incendio__idLoca__2F10007B">
+  <Association Name="FK__Incendio__idLoca__2E1BDC42">
     <End Role="localidad" Type="Self.localidad" Multiplicity="1" />
     <End Role="Incendio" Type="Self.Incendio" Multiplicity="*" />
     <ReferentialConstraint>
@@ -92,18 +77,6 @@
       </Principal>
       <Dependent Role="Incendio">
         <PropertyRef Name="idLocalidad" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK__Incendio__idProv__300424B4">
-    <End Role="provincia" Type="Self.provincia" Multiplicity="1" />
-    <End Role="Incendio" Type="Self.Incendio" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="provincia">
-        <PropertyRef Name="idProvincia" />
-      </Principal>
-      <Dependent Role="Incendio">
-        <PropertyRef Name="idProvincia" />
       </Dependent>
     </ReferentialConstraint>
   </Association>
@@ -129,16 +102,8 @@
       <End Role="localidad" EntitySet="localidad" />
       <End Role="datoMeteorologico" EntitySet="datoMeteorologico" />
     </AssociationSet>
-    <AssociationSet Name="FK__datoMeteo__idPro__2C3393D0" Association="Self.FK__datoMeteo__idPro__2C3393D0">
-      <End Role="provincia" EntitySet="provincia" />
-      <End Role="datoMeteorologico" EntitySet="datoMeteorologico" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Incendio__idLoca__2F10007B" Association="Self.FK__Incendio__idLoca__2F10007B">
+    <AssociationSet Name="FK__Incendio__idLoca__2E1BDC42" Association="Self.FK__Incendio__idLoca__2E1BDC42">
       <End Role="localidad" EntitySet="localidad" />
-      <End Role="Incendio" EntitySet="Incendio" />
-    </AssociationSet>
-    <AssociationSet Name="FK__Incendio__idProv__300424B4" Association="Self.FK__Incendio__idProv__300424B4">
-      <End Role="provincia" EntitySet="provincia" />
       <End Role="Incendio" EntitySet="Incendio" />
     </AssociationSet>
     <AssociationSet Name="FK__localidad__idPro__286302EC" Association="Self.FK__localidad__idPro__286302EC">

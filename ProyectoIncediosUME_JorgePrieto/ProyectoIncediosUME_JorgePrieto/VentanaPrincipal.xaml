@@ -4,17 +4,18 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
+        xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
         mc:Ignorable="d"
         Title="VentanaPrincipal" Height="600" Width="1000" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF53C27D" WindowStyle="None" Loaded="Window_Loaded">
 
     <Window.CommandBindings>
-        <CommandBinding Command="local:Comandos.salir" CanExecute="CompruebaSinLogin" Executed="Salir"/>
-        <CommandBinding Command="local:Comandos.gestinarUsuarios" CanExecute="CompruebaConLogin" Executed="AccederVentanaGestiónUsuarios"/>
-        <CommandBinding Command="local:Comandos.accederHistorialIncendios" CanExecute="CompruebaSinLogin" Executed="AccederVentanaHistorialDeIncendios"/>
-        <CommandBinding Command="local:Comandos.modificarRegistrosDeIncendios" CanExecute="CompruebaConLogin" Executed="AccederVentanaModificarIncendios"/>
-        <CommandBinding Command="local:Comandos.modificarDatosMeteorologicos" CanExecute="CompruebaConLogin" Executed="AccederVentanaModificarDatosMeteorologicos"/>
-        <CommandBinding Command="local:Comandos.consultarProbabilidadesDeIncendio" CanExecute="CompruebaSinLogin" Executed="AccederVentanaProbabilidadDeIncendio"/>
-        <CommandBinding Command="local:Comandos.modificarLocalidades" CanExecute="CompruebaConLogin" Executed="AccederVentanaModificarLocalidades"/>
+        <CommandBinding Command="clases:Comandos.salir" CanExecute="CompruebaSinLogin" Executed="Salir"/>
+        <CommandBinding Command="clases:Comandos.gestinarUsuarios" CanExecute="CompruebaConLogin" Executed="AccederVentanaGestiónUsuarios"/>
+        <CommandBinding Command="clases:Comandos.accederHistorialIncendios" CanExecute="CompruebaSinLogin" Executed="AccederVentanaHistorialDeIncendios"/>
+        <CommandBinding Command="clases:Comandos.modificarRegistrosDeIncendios" CanExecute="CompruebaConLogin" Executed="AccederVentanaModificarIncendios"/>
+        <CommandBinding Command="clases:Comandos.modificarDatosMeteorologicos" CanExecute="CompruebaConLogin" Executed="AccederVentanaModificarDatosMeteorologicos"/>
+        <CommandBinding Command="clases:Comandos.consultarProbabilidadesDeIncendio" CanExecute="CompruebaSinLogin" Executed="AccederVentanaProbabilidadDeIncendio"/>
+        <CommandBinding Command="clases:Comandos.modificarLocalidades" CanExecute="CompruebaConLogin" Executed="AccederVentanaModificarLocalidades"/>
     </Window.CommandBindings>
 
     <Grid>
@@ -24,7 +25,7 @@
             </Rectangle.Fill>
         </Rectangle>
 
-        <Button Content="Salir del programa" x:Name="btnSalir" HorizontalAlignment="Left" Height="48" Margin="374,511.5,0,0" VerticalAlignment="Top" Width="250" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="local:Comandos.salir">
+        <Button Content="Salir del programa" x:Name="btnSalir" HorizontalAlignment="Left" Height="48" Margin="374,511.5,0,0" VerticalAlignment="Top" Width="250" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.salir">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -33,7 +34,7 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="45" Margin="150,45,0,0" TextWrapping="Wrap" Text="Bienvenido a Predicción de incendios Ume" VerticalAlignment="Top" Width="700" FontSize="34" Foreground="#FF3679CD"  FontFamily="Lucida Sans Unicode"/>
-        <Button Content="Administración de usuarios" x:Name="btnAdministracionUsuarios" HorizontalAlignment="Left" Height="48" Margin="25,120,0,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="local:Comandos.gestinarUsuarios" >
+        <Button Content="Administración de usuarios" x:Name="btnAdministracionUsuarios" HorizontalAlignment="Left" Height="48" Margin="25,120,0,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="clases:Comandos.gestinarUsuarios" >
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -41,7 +42,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Acceder al historial de Incendios" x:Name="btnHistorialIncendios" HorizontalAlignment="Left" Height="48" Margin="25,271.5,0,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="local:Comandos.accederHistorialIncendios">
+        <Button Content="Acceder al historial de Incendios" x:Name="btnHistorialIncendios" HorizontalAlignment="Left" Height="48" Margin="25,271.5,0,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.accederHistorialIncendios">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -49,7 +50,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Modificar el historial de incendios" x:Name="btnModificarHistoralIncendios" HorizontalAlignment="Left" Height="48" Margin="25,422,0,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="local:Comandos.modificarRegistrosDeIncendios">
+        <Button Content="Modificar el historial de incendios" x:Name="btnModificarHistoralIncendios" HorizontalAlignment="Left" Height="48" Margin="25,422,0,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="clases:Comandos.modificarRegistrosDeIncendios">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -57,7 +58,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Modificar datos metereológicos" x:Name="btnModificarDatosMeteorológicos" HorizontalAlignment="Left" Height="48" Margin="700,120,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="local:Comandos.modificarDatosMeteorologicos">
+        <Button Content="Modificar datos metereológicos" x:Name="btnModificarDatosMeteorológicos" HorizontalAlignment="Left" Height="48" Margin="700,120,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="clases:Comandos.modificarDatosMeteorologicos">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -65,7 +66,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Consultar probabilidades de incendios" x:Name="btnProbabilidadesDeIncendio" HorizontalAlignment="Left" Height="48" Margin="700,271.5,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="14" FontFamily="Lucida Sans Unicode" Command="local:Comandos.consultarProbabilidadesDeIncendio">
+        <Button Content="Consultar probabilidades de incendios" x:Name="btnProbabilidadesDeIncendio" HorizontalAlignment="Left" Height="48" Margin="700,271.5,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="14" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.consultarProbabilidadesDeIncendio">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -73,7 +74,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Modificar localidades" x:Name="btnModificarLocalidades" HorizontalAlignment="Left" Height="48" Margin="700,422,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="local:Comandos.modificarLocalidades">
+        <Button Content="Modificar localidades" x:Name="btnModificarLocalidades" HorizontalAlignment="Left" Height="48" Margin="700,422,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="clases:Comandos.modificarLocalidades">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>

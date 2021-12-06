@@ -4,15 +4,16 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
+        xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
         mc:Ignorable="d"
         Title="VentanaGestionUsuarios" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#499BEE" WindowStyle="None" Loaded="Window_Loaded">
     <Window.CommandBindings>
-        <CommandBinding Command="local:Comandos.volverAtras" CanExecute="CompruebaSalir" Executed="Salir"/>
-        <CommandBinding Command="local:Comandos.activarDesactivarUsuario" CanExecute="CompruebaModificaciones" Executed="Activar_Desactivar"/>
-        <CommandBinding Command="local:Comandos.eliminarUsuario" CanExecute="CompruebaModificaciones" Executed="EliminarUsuario"/>
+        <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="CompruebaSalir" Executed="Salir"/>
+        <CommandBinding Command="clases:Comandos.activarDesactivarUsuario" CanExecute="CompruebaModificaciones" Executed="Activar_Desactivar"/>
+        <CommandBinding Command="clases:Comandos.eliminarUsuario" CanExecute="CompruebaModificaciones" Executed="EliminarUsuario"/>
     </Window.CommandBindings>
     <Grid Width="800" Height="450">
-        <Button Content="Activar/desactivar usuario" x:Name="btnActivarDesactivarUsuario" HorizontalAlignment="Left" Height="48" Margin="30.625,359.625,0,0" VerticalAlignment="Top" Width="240" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="local:Comandos.activarDesactivarUsuario">
+        <Button Content="Activar/desactivar usuario" x:Name="btnActivarDesactivarUsuario" HorizontalAlignment="Left" Height="48" Margin="30.625,359.625,0,0" VerticalAlignment="Top" Width="240" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.activarDesactivarUsuario">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -20,7 +21,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Eliminar usuario" x:Name="btnEliminarUsuario" HorizontalAlignment="Left" Height="48" Margin="521.875,359.625,0,0" VerticalAlignment="Top" Width="240" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="local:Comandos.eliminarUsuario">
+        <Button Content="Eliminar usuario" x:Name="btnEliminarUsuario" HorizontalAlignment="Left" Height="48" Margin="521.875,359.625,0,0" VerticalAlignment="Top" Width="240" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.eliminarUsuario">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -28,7 +29,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Volver atras" x:Name="btnVolverAtras" HorizontalAlignment="Left" Height="48" Margin="601.875,32.5,0,0" VerticalAlignment="Top" Width="160" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="local:Comandos.volverAtras">
+        <Button Content="Volver atras" x:Name="btnVolverAtras" HorizontalAlignment="Left" Height="48" Margin="601.875,32.5,0,0" VerticalAlignment="Top" Width="160" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.volverAtras">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>

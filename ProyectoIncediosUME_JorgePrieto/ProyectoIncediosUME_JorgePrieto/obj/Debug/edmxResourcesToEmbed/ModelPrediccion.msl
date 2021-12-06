@@ -1,12 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-  <EntityContainerMapping StorageEntityContainer="prediccion_incendiosModelStoreContainer" CdmEntityContainer="prediccion_incendios_Entities">
+  <EntityContainerMapping StorageEntityContainer="prediccion_incendiosModelStoreContainer" CdmEntityContainer="prediccion_incendiosEntitiesDB">
     <EntitySetMapping Name="datoMeteorologico">
       <EntityTypeMapping TypeName="prediccion_incendiosModel.datoMeteorologico">
         <MappingFragment StoreEntitySet="datoMeteorologico">
           <ScalarProperty Name="idDato" ColumnName="idDato" />
           <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
-          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
           <ScalarProperty Name="temperaturaMedia" ColumnName="temperaturaMedia" />
           <ScalarProperty Name="humedadMedia" ColumnName="humedadMedia" />
           <ScalarProperty Name="fechaDeInicio" ColumnName="fechaDeInicio" />
@@ -19,7 +18,6 @@
         <MappingFragment StoreEntitySet="Incendio">
           <ScalarProperty Name="idIncendio" ColumnName="idIncendio" />
           <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
-          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
           <ScalarProperty Name="hectareasQuemadas" ColumnName="hectareasQuemadas" />
           <ScalarProperty Name="temperaturaMedia" ColumnName="temperaturaMedia" />
           <ScalarProperty Name="humedadMedia" ColumnName="humedadMedia" />
@@ -34,7 +32,6 @@
           <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
           <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
           <ScalarProperty Name="nombreLocalidad" ColumnName="nombreLocalidad" />
-          <ScalarProperty Name="fotoLocalidad" ColumnName="fotoLocalidad" />
           <ScalarProperty Name="temperaturaMediaPrimavera" ColumnName="temperaturaMediaPrimavera" />
           <ScalarProperty Name="humedadMediaPrimavera" ColumnName="humedadMediaPrimavera" />
           <ScalarProperty Name="temperaturaMediaVerano" ColumnName="temperaturaMediaVerano" />

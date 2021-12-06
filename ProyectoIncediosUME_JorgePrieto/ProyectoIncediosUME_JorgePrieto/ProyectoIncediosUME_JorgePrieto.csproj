@@ -66,38 +66,52 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="ClaseConsultas.cs" />
-    <Compile Include="ClaseLogin.cs" />
-    <Compile Include="Comandos.cs" />
+    <Compile Include="Clases\ClaseConsultas.cs" />
+    <Compile Include="Clases\ClaseLogin.cs" />
+    <Compile Include="Clases\Comandos.cs" />
+    <Compile Include="Clases\IncendiosAVisualizar.cs" />
     <Compile Include="datoMeteorologico.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.tt</DependentUpon>
     </Compile>
     <Compile Include="Incendio.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.tt</DependentUpon>
     </Compile>
     <Compile Include="localidad.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.Context.cs">
+    <Compile Include="Clases\LocalidadesAVisualizar.cs" />
+    <Compile Include="ModelPrediccion.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.Context.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.cs">
+    <Compile Include="ModelPrediccion.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.tt</DependentUpon>
     </Compile>
-    <Compile Include="Model.Designer.cs">
+    <Compile Include="ModelPrediccion.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>Model.edmx</DependentUpon>
+      <DependentUpon>ModelPrediccion.edmx</DependentUpon>
     </Compile>
     <Compile Include="provincia.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.tt</DependentUpon>
     </Compile>
     <Compile Include="usuario.cs">
-      <DependentUpon>Model.tt</DependentUpon>
+      <DependentUpon>ModelPrediccion.tt</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasIncendios\VentanaAñadirIncendio.xaml.cs">
+      <DependentUpon>VentanaAñadirIncendio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasIncendios\VentanaMoficarIncendio.xaml.cs">
+      <DependentUpon>VentanaMoficarIncendio.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasLocalidad\VentanaAñadirLocalidades.xaml.cs">
+      <DependentUpon>VentanaAñadirLocalidades.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasLocalidad\VentanaLocalidad.xaml.cs">
+      <DependentUpon>VentanaLocalidad.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaConsultarProbabilidadIncendio.xaml.cs">
       <DependentUpon>VentanaConsultarProbabilidadIncendio.xaml</DependentUpon>
@@ -111,14 +125,14 @@
     <Compile Include="VentanaModificarDatosMeteorológicos.xaml.cs">
       <DependentUpon>VentanaModificarDatosMeteorológicos.xaml</DependentUpon>
     </Compile>
-    <Compile Include="VentanaModificarIncendios.xaml.cs">
-      <DependentUpon>VentanaModificarIncendios.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="VentanaModificarLocalidades.xaml.cs">
-      <DependentUpon>VentanaModificarLocalidades.xaml</DependentUpon>
+    <Compile Include="VentanasIncendios\VentanaIncendios.xaml.cs">
+      <DependentUpon>VentanaIncendios.xaml</DependentUpon>
     </Compile>
     <Compile Include="VentanaPrincipal.xaml.cs">
       <DependentUpon>VentanaPrincipal.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VentanasLocalidad\VentanaModificarLocalidades.xaml.cs">
+      <DependentUpon>VentanaModificarLocalidades.xaml</DependentUpon>
     </Compile>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -132,6 +146,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="VentanasIncendios\VentanaAñadirIncendio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanasIncendios\VentanaMoficarIncendio.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanasLocalidad\VentanaAñadirLocalidades.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanasLocalidad\VentanaLocalidad.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="VentanaConsultarProbabilidadIncendio.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
@@ -148,15 +178,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="VentanaModificarIncendios.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-    <Page Include="VentanaModificarLocalidades.xaml">
+    <Page Include="VentanasIncendios\VentanaIncendios.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="VentanaPrincipal.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VentanasLocalidad\VentanaModificarLocalidades.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -179,12 +209,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="Model.edmx">
+    <EntityDeploy Include="ModelPrediccion.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Model.Designer.cs</LastGenOutput>
+      <LastGenOutput>ModelPrediccion.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="Model.edmx.diagram">
-      <DependentUpon>Model.edmx</DependentUpon>
+    <None Include="ModelPrediccion.edmx.diagram">
+      <DependentUpon>ModelPrediccion.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -202,16 +232,19 @@
     <Resource Include="escudo.png" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Model.Context.tt">
+    <Content Include="ModelPrediccion.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.Context.cs</LastGenOutput>
+      <DependentUpon>ModelPrediccion.edmx</DependentUpon>
+      <LastGenOutput>ModelPrediccion.Context.cs</LastGenOutput>
     </Content>
-    <Content Include="Model.tt">
+    <Content Include="ModelPrediccion.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Model.edmx</DependentUpon>
-      <LastGenOutput>Model.cs</LastGenOutput>
+      <DependentUpon>ModelPrediccion.edmx</DependentUpon>
+      <LastGenOutput>ModelPrediccion.cs</LastGenOutput>
     </Content>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="VentanasDatosMeteorologicos\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

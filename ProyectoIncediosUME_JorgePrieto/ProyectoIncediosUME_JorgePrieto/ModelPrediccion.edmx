@@ -11,8 +11,8 @@
           </Key>
           <Property Name="idDato" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idLocalidad" Type="int" Nullable="false" />
-          <Property Name="temperaturaMedia" Type="float" />
-          <Property Name="humedadMedia" Type="float" />
+          <Property Name="temperaturaMedia" Type="int" />
+          <Property Name="humedadMedia" Type="int" />
           <Property Name="fechaDeInicio" Type="date" />
           <Property Name="fechaDeFinalizacion" Type="date" />
         </EntityType>
@@ -23,8 +23,8 @@
           <Property Name="idIncendio" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idLocalidad" Type="int" Nullable="false" />
           <Property Name="hectareasQuemadas" Type="int" />
-          <Property Name="temperaturaMedia" Type="float" />
-          <Property Name="humedadMedia" Type="float" />
+          <Property Name="temperaturaMedia" Type="int" />
+          <Property Name="humedadMedia" Type="int" />
           <Property Name="fechaDeInicio" Type="date" />
           <Property Name="fechaDeExtinción" Type="date" />
         </EntityType>
@@ -35,15 +35,14 @@
           <Property Name="idLocalidad" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="idProvincia" Type="int" Nullable="false" />
           <Property Name="nombreLocalidad" Type="varchar" MaxLength="80" />
-          <Property Name="fotoLocalidad" Type="image" />
-          <Property Name="temperaturaMediaPrimavera" Type="float" />
-          <Property Name="humedadMediaPrimavera" Type="float" />
-          <Property Name="temperaturaMediaVerano" Type="float" />
-          <Property Name="humedadMediaVerano" Type="float" />
-          <Property Name="temperaturaMediaOtoño" Type="float" />
-          <Property Name="humedadMediaOtoño" Type="float" />
-          <Property Name="temperaturaMediaInvierno" Type="float" />
-          <Property Name="humedadMediaInvierno" Type="float" />
+          <Property Name="temperaturaMediaPrimavera" Type="int" />
+          <Property Name="humedadMediaPrimavera" Type="int" />
+          <Property Name="temperaturaMediaVerano" Type="int" />
+          <Property Name="humedadMediaVerano" Type="int" />
+          <Property Name="temperaturaMediaOtoño" Type="int" />
+          <Property Name="humedadMediaOtoño" Type="int" />
+          <Property Name="temperaturaMediaInvierno" Type="int" />
+          <Property Name="humedadMediaInvierno" Type="int" />
         </EntityType>
         <EntityType Name="provincia">
           <Key>
@@ -54,11 +53,11 @@
         </EntityType>
         <EntityType Name="usuario">
           <Key>
-            <PropertyRef Name="idUsuario" />
+            <PropertyRef Name="correoUsuario" />
           </Key>
           <Property Name="idUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nombreUsuario" Type="varchar" MaxLength="80" />
-          <Property Name="correoUsuario" Type="varchar" MaxLength="80" />
+          <Property Name="correoUsuario" Type="varchar" MaxLength="80" Nullable="false" />
           <Property Name="contrasenaUsuario" Type="varchar" MaxLength="80" />
           <Property Name="activo" Type="varchar" MaxLength="80" />
         </EntityType>
@@ -128,8 +127,8 @@
           </Key>
           <Property Name="idDato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idLocalidad" Type="Int32" Nullable="false" />
-          <Property Name="temperaturaMedia" Type="Double" />
-          <Property Name="humedadMedia" Type="Double" />
+          <Property Name="temperaturaMedia" Type="Int32" />
+          <Property Name="humedadMedia" Type="Int32" />
           <Property Name="fechaDeInicio" Type="DateTime" Precision="0" />
           <Property Name="fechaDeFinalizacion" Type="DateTime" Precision="0" />
           <NavigationProperty Name="localidad" Relationship="Self.FK__datoMeteo__idLoc__2B3F6F97" FromRole="datoMeteorologico" ToRole="localidad" />
@@ -141,8 +140,8 @@
           <Property Name="idIncendio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idLocalidad" Type="Int32" Nullable="false" />
           <Property Name="hectareasQuemadas" Type="Int32" />
-          <Property Name="temperaturaMedia" Type="Double" />
-          <Property Name="humedadMedia" Type="Double" />
+          <Property Name="temperaturaMedia" Type="Int32" />
+          <Property Name="humedadMedia" Type="Int32" />
           <Property Name="fechaDeInicio" Type="DateTime" Precision="0" />
           <Property Name="fechaDeExtinción" Type="DateTime" Precision="0" />
           <NavigationProperty Name="localidad" Relationship="Self.FK__Incendio__idLoca__2E1BDC42" FromRole="Incendio" ToRole="localidad" />
@@ -154,15 +153,14 @@
           <Property Name="idLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="idProvincia" Type="Int32" Nullable="false" />
           <Property Name="nombreLocalidad" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="fotoLocalidad" Type="Binary" MaxLength="Max" FixedLength="false" />
-          <Property Name="temperaturaMediaPrimavera" Type="Double" />
-          <Property Name="humedadMediaPrimavera" Type="Double" />
-          <Property Name="temperaturaMediaVerano" Type="Double" />
-          <Property Name="humedadMediaVerano" Type="Double" />
-          <Property Name="temperaturaMediaOtoño" Type="Double" />
-          <Property Name="humedadMediaOtoño" Type="Double" />
-          <Property Name="temperaturaMediaInvierno" Type="Double" />
-          <Property Name="humedadMediaInvierno" Type="Double" />
+          <Property Name="temperaturaMediaPrimavera" Type="Int32" />
+          <Property Name="humedadMediaPrimavera" Type="Int32" />
+          <Property Name="temperaturaMediaVerano" Type="Int32" />
+          <Property Name="humedadMediaVerano" Type="Int32" />
+          <Property Name="temperaturaMediaOtoño" Type="Int32" />
+          <Property Name="humedadMediaOtoño" Type="Int32" />
+          <Property Name="temperaturaMediaInvierno" Type="Int32" />
+          <Property Name="humedadMediaInvierno" Type="Int32" />
           <NavigationProperty Name="datoMeteorologico" Relationship="Self.FK__datoMeteo__idLoc__2B3F6F97" FromRole="localidad" ToRole="datoMeteorologico" />
           <NavigationProperty Name="Incendio" Relationship="Self.FK__Incendio__idLoca__2E1BDC42" FromRole="localidad" ToRole="Incendio" />
           <NavigationProperty Name="provincia" Relationship="Self.FK__localidad__idPro__286302EC" FromRole="localidad" ToRole="provincia" />
@@ -177,11 +175,11 @@
         </EntityType>
         <EntityType Name="usuario">
           <Key>
-            <PropertyRef Name="idUsuario" />
+            <PropertyRef Name="correoUsuario" />
           </Key>
           <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="nombreUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-          <Property Name="correoUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+          <Property Name="correoUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="contrasenaUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
           <Property Name="activo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
         </EntityType>
@@ -221,7 +219,7 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <EntityContainer Name="prediccionIncendiosEntites" annotation:LazyLoadingEnabled="true">
+        <EntityContainer Name="prediccion_incendiosEntitiesDB" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="datoMeteorologico" EntityType="Self.datoMeteorologico" />
           <EntitySet Name="Incendio" EntityType="Self.Incendio" />
           <EntitySet Name="localidad" EntityType="Self.localidad" />
@@ -245,7 +243,7 @@
     <!-- C-S mapping content -->
     <edmx:Mappings>
       <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
-        <EntityContainerMapping StorageEntityContainer="prediccion_incendiosModelStoreContainer" CdmEntityContainer="prediccionIncendiosEntites">
+        <EntityContainerMapping StorageEntityContainer="prediccion_incendiosModelStoreContainer" CdmEntityContainer="prediccion_incendiosEntitiesDB">
           <EntitySetMapping Name="datoMeteorologico">
             <EntityTypeMapping TypeName="prediccion_incendiosModel.datoMeteorologico">
               <MappingFragment StoreEntitySet="datoMeteorologico">
@@ -277,7 +275,6 @@
                 <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
                 <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
                 <ScalarProperty Name="nombreLocalidad" ColumnName="nombreLocalidad" />
-                <ScalarProperty Name="fotoLocalidad" ColumnName="fotoLocalidad" />
                 <ScalarProperty Name="temperaturaMediaPrimavera" ColumnName="temperaturaMediaPrimavera" />
                 <ScalarProperty Name="humedadMediaPrimavera" ColumnName="humedadMediaPrimavera" />
                 <ScalarProperty Name="temperaturaMediaVerano" ColumnName="temperaturaMediaVerano" />

@@ -17,8 +17,8 @@ namespace ProyectoIncediosUME_JorgePrieto
         public int idIncendio { get; set; }
         public int idLocalidad { get; set; }
         public Nullable<int> hectareasQuemadas { get; set; }
-        public Nullable<double> temperaturaMedia { get; set; }
-        public Nullable<double> humedadMedia { get; set; }
+        public Nullable<int> temperaturaMedia { get; set; }
+        public Nullable<int> humedadMedia { get; set; }
         public Nullable<System.DateTime> fechaDeInicio { get; set; }
         public Nullable<System.DateTime> fechaDeExtinción { get; set; }
     

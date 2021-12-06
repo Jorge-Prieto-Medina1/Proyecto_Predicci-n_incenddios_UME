@@ -32,7 +32,6 @@
           <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
           <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
           <ScalarProperty Name="nombreLocalidad" ColumnName="nombreLocalidad" />
-          <ScalarProperty Name="fotoLocalidad" ColumnName="fotoLocalidad" />
           <ScalarProperty Name="temperaturaMediaPrimavera" ColumnName="temperaturaMediaPrimavera" />
           <ScalarProperty Name="humedadMediaPrimavera" ColumnName="humedadMediaPrimavera" />
           <ScalarProperty Name="temperaturaMediaVerano" ColumnName="temperaturaMediaVerano" />

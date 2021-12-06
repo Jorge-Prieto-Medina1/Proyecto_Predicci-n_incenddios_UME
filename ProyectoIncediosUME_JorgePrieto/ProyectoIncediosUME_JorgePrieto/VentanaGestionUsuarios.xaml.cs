@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoIncediosUME_JorgePrieto.Clases;
+using System;
 using System.Collections.Generic;
 using System.Data;
 using System.Linq;
@@ -88,7 +89,6 @@ namespace ProyectoIncediosUME_JorgePrieto
             if (this.dgrUsuarios.SelectedItems.Count == 0)
             {
                 MessageBox.Show("Seleccione un usuario");
-
             }
             else
             {

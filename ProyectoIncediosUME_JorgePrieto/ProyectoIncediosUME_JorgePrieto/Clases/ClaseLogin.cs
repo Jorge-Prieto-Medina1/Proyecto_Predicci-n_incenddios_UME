@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace ProyectoIncediosUME_JorgePrieto
+namespace ProyectoIncediosUME_JorgePrieto.Clases
 {
     public class ClaseLogin
     {

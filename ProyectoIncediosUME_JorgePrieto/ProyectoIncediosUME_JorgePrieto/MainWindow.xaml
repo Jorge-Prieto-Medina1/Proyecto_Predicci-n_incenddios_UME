@@ -4,6 +4,7 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
+        xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
         mc:Ignorable="d"
         Title="VentanaLogin" Height="526" Width="622" Visibility="Visible"  WindowStyle="None" AllowsTransparency="True" Foreground="Black" Background="{x:Null}" VerticalAlignment="Top" HorizontalAlignment="Left" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Loaded="Ventana_Loaded">
     <Window.Resources>
@@ -1329,9 +1330,9 @@
     </Window.Triggers>
 
     <Window.CommandBindings>
-        <CommandBinding Command="local:Comandos.loginInvitado" CanExecute="CompruebaLoginInvitado" Executed="LoginInvitado"/>
-        <CommandBinding Command="local:Comandos.login" CanExecute="CompruebaLogin" Executed="LoginUsuario"/>
-        <CommandBinding Command="local:Comandos.registrar" CanExecute="CompruebaRegistro" Executed="RegistroUsuario"/>
+        <CommandBinding Command="clases:Comandos.loginInvitado" CanExecute="CompruebaLoginInvitado" Executed="LoginInvitado"/>
+        <CommandBinding Command="clases:Comandos.login" CanExecute="CompruebaLogin" Executed="LoginUsuario"/>
+        <CommandBinding Command="clases:Comandos.registrar" CanExecute="CompruebaRegistro" Executed="RegistroUsuario"/>
     </Window.CommandBindings>
 
     <Grid x:Name="grid" Margin="0,0,0,0">
@@ -1396,7 +1397,7 @@
                     </TransformGroup>
                 </TextBlock.RenderTransform>
             </TextBlock>
-            <Button Content="Entrar como invitado" x:Name="btnInvitadoRegistro" HorizontalAlignment="Left" Height="48" Margin="113.579,-16,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5" Command="local:Comandos.loginInvitado">
+            <Button Content="Entrar como invitado" x:Name="btnInvitadoRegistro" HorizontalAlignment="Left" Height="48" Margin="113.579,-16,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5" Command="clases:Comandos.loginInvitado">
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1412,7 +1413,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Registrarse" x:Name="btnRegistrar" HorizontalAlignment="Left" Height="48" Margin="113.579,288.214,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5" Command="local:Comandos.registrar" >
+            <Button Content="Registrarse" x:Name="btnRegistrar" HorizontalAlignment="Left" Height="48" Margin="113.579,288.214,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.5,0.5" Command="clases:Comandos.registrar" >
                 <Button.RenderTransform>
                     <TransformGroup>
                         <ScaleTransform/>
@@ -1538,7 +1539,7 @@
             <Rectangle Fill="#FF53C17C" HorizontalAlignment="Left" Height="48.286" Margin="0,184.691,0,0" Stroke="White" VerticalAlignment="Top" Width="131.052"/>
             <TextBlock HorizontalAlignment="Left" x:Name="lblEmailLogin" Height="48.285" Margin="0,100.192,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Email" />
             <TextBlock HorizontalAlignment="Left" x:Name="lblContraseñaLogin" Height="48.285" Margin="0,196.763,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="131.052" Foreground="#FF3279D3" FontSize="18" FontFamily="Lucida Sans Unicode" TextAlignment="Center" Text="Contraseña" />
-            <Button Content="Entrar como invitado" x:Name="btnInvitadoLogin" HorizontalAlignment="Left" Height="48" Margin="113.579,0,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="local:Comandos.loginInvitado">
+            <Button Content="Entrar como invitado" x:Name="btnInvitadoLogin" HorizontalAlignment="Left" Height="48" Margin="113.579,0,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.loginInvitado">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFEEDF49" Offset="0"/>
@@ -1546,7 +1547,7 @@
                     </LinearGradientBrush>
                 </Button.Background>
             </Button>
-            <Button Content="Iniciar sesión" x:Name="btnIniciarSesión" HorizontalAlignment="Left" Height="48" Margin="113.579,273.214,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="local:Comandos.login">
+            <Button Content="Iniciar sesión" x:Name="btnIniciarSesión" HorizontalAlignment="Left" Height="48" Margin="113.579,273.214,0,0" VerticalAlignment="Top" Width="215" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.login">
                 <Button.Background>
                     <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                         <GradientStop Color="#FFEEDF49" Offset="0"/>

@@ -5,7 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
 
-namespace ProyectoIncediosUME_JorgePrieto
+namespace ProyectoIncediosUME_JorgePrieto.Clases
 {
     public static class Comandos
     {
@@ -34,5 +34,11 @@ namespace ProyectoIncediosUME_JorgePrieto
         public static readonly RoutedUICommand activarDesactivarUsuario = new RoutedUICommand();
 
         public static readonly RoutedUICommand eliminarUsuario = new RoutedUICommand();
+
+        public static readonly RoutedUICommand eliminarLocalidad = new RoutedUICommand();
+
+        public static readonly RoutedUICommand añadirLocalidad = new RoutedUICommand();
+
+        public static readonly RoutedUICommand modificarLocalidad = new RoutedUICommand();
     }
 }

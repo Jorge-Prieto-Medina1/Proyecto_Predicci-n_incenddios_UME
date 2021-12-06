@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace ProyectoIncediosUME_JorgePrieto
+namespace ProyectoIncediosUME_JorgePrieto.VentanasIncendios
 {
     /// <summary>
-    /// Lógica de interacción para VentanaModificarLocalidades.xaml
+    /// Lógica de interacción para VentanaModificarIncendios.xaml
     /// </summary>
-    public partial class VentanaModificarLocalidades : Window
+    public partial class VentanaIncendios : Window
     {
-        public VentanaModificarLocalidades()
+        public VentanaIncendios()
         {
             InitializeComponent();
         }

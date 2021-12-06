@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 C:\Users\pablo\Desktop\ProyectoFinDeCurso\Proyecto_Predicción_incenddios_UME\ProyectoIncediosUME_JorgePrieto\ProyectoIncediosUME_JorgePrieto\App.xaml
-8236645580
-2-1881755278
-23-906141480
+102145828807
+2-446319640
+26774066167
 18-32456295
-MainWindow.xaml;VentanaConsultarProbabilidadIncendio.xaml;VentanaGestionUsuarios.xaml;VentanaHistorialIncendios.xaml;VentanaModificarDatosMeteorológicos.xaml;VentanaModificarIncendios.xaml;VentanaModificarLocalidades.xaml;VentanaPrincipal.xaml;
+MainWindow.xaml;VentanasLocalidad\VentanaAñadirLocalidades.xaml;VentanasLocalidad\VentanaLocalidad.xaml;VentanaConsultarProbabilidadIncendio.xaml;VentanaGestionUsuarios.xaml;VentanaHistorialIncendios.xaml;VentanaModificarDatosMeteorológicos.xaml;VentanaModificarIncendios.xaml;VentanaPrincipal.xaml;VentanasLocalidad\VentanaModificarLocalidades.xaml;
 
 False
 

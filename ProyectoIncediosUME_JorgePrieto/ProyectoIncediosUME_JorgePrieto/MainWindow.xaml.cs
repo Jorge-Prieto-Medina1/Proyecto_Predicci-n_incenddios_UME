@@ -1,4 +1,5 @@
-﻿using System;
+﻿using ProyectoIncediosUME_JorgePrieto.Clases;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -51,6 +52,7 @@ namespace ProyectoIncediosUME_JorgePrieto
         {
             ClaseLogin InfoUsuario = new ClaseLogin(false,"invitado", "");
             VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
+            MessageBox.Show("Bienvenido invitado");
             ventanaMain.Show();
             this.Close();
         }
@@ -90,6 +92,7 @@ namespace ProyectoIncediosUME_JorgePrieto
 
                             ClaseLogin InfoUsuario = new ClaseLogin(true,nombreUsuario, email);
                             VentanaPrincipal ventanaMain = new VentanaPrincipal(InfoUsuario);
+                            MessageBox.Show("Bienvenido " + InfoUsuario.nombreUsuario);
                             ventanaMain.Show();
                             this.Close();
                         }

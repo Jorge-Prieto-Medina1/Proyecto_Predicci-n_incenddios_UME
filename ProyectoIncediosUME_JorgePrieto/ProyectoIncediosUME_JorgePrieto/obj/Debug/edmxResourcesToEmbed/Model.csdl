@@ -32,15 +32,14 @@
     <Property Name="idLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
     <Property Name="idProvincia" Type="Int32" Nullable="false" />
     <Property Name="nombreLocalidad" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
-    <Property Name="fotoLocalidad" Type="Binary" MaxLength="Max" FixedLength="false" />
-    <Property Name="temperaturaMediaPrimavera" Type="Double" />
-    <Property Name="humedadMediaPrimavera" Type="Double" />
-    <Property Name="temperaturaMediaVerano" Type="Double" />
-    <Property Name="humedadMediaVerano" Type="Double" />
-    <Property Name="temperaturaMediaOtoño" Type="Double" />
-    <Property Name="humedadMediaOtoño" Type="Double" />
-    <Property Name="temperaturaMediaInvierno" Type="Double" />
-    <Property Name="humedadMediaInvierno" Type="Double" />
+    <Property Name="temperaturaMediaPrimavera" Type="Int32" />
+    <Property Name="humedadMediaPrimavera" Type="Int32" />
+    <Property Name="temperaturaMediaVerano" Type="Int32" />
+    <Property Name="humedadMediaVerano" Type="Int32" />
+    <Property Name="temperaturaMediaOtoño" Type="Int32" />
+    <Property Name="humedadMediaOtoño" Type="Int32" />
+    <Property Name="temperaturaMediaInvierno" Type="Int32" />
+    <Property Name="humedadMediaInvierno" Type="Int32" />
     <NavigationProperty Name="datoMeteorologico" Relationship="Self.FK__datoMeteo__idLoc__2B3F6F97" FromRole="localidad" ToRole="datoMeteorologico" />
     <NavigationProperty Name="Incendio" Relationship="Self.FK__Incendio__idLoca__2E1BDC42" FromRole="localidad" ToRole="Incendio" />
     <NavigationProperty Name="provincia" Relationship="Self.FK__localidad__idPro__286302EC" FromRole="localidad" ToRole="provincia" />

@@ -16,8 +16,8 @@ namespace ProyectoIncediosUME_JorgePrieto
     {
         public int idDato { get; set; }
         public int idLocalidad { get; set; }
-        public Nullable<double> temperaturaMedia { get; set; }
-        public Nullable<double> humedadMedia { get; set; }
+        public Nullable<int> temperaturaMedia { get; set; }
+        public Nullable<int> humedadMedia { get; set; }
         public Nullable<System.DateTime> fechaDeInicio { get; set; }
         public Nullable<System.DateTime> fechaDeFinalizacion { get; set; }
     

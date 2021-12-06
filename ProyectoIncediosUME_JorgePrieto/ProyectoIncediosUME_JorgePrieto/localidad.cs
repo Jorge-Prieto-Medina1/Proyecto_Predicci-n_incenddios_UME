@@ -23,15 +23,14 @@ namespace ProyectoIncediosUME_JorgePrieto
         public int idLocalidad { get; set; }
         public int idProvincia { get; set; }
         public string nombreLocalidad { get; set; }
-        public byte[] fotoLocalidad { get; set; }
-        public Nullable<double> temperaturaMediaPrimavera { get; set; }
-        public Nullable<double> humedadMediaPrimavera { get; set; }
-        public Nullable<double> temperaturaMediaVerano { get; set; }
-        public Nullable<double> humedadMediaVerano { get; set; }
-        public Nullable<double> temperaturaMediaOtoño { get; set; }
-        public Nullable<double> humedadMediaOtoño { get; set; }
-        public Nullable<double> temperaturaMediaInvierno { get; set; }
-        public Nullable<double> humedadMediaInvierno { get; set; }
+        public Nullable<int> temperaturaMediaPrimavera { get; set; }
+        public Nullable<int> humedadMediaPrimavera { get; set; }
+        public Nullable<int> temperaturaMediaVerano { get; set; }
+        public Nullable<int> humedadMediaVerano { get; set; }
+        public Nullable<int> temperaturaMediaOtoño { get; set; }
+        public Nullable<int> humedadMediaOtoño { get; set; }
+        public Nullable<int> temperaturaMediaInvierno { get; set; }
+        public Nullable<int> humedadMediaInvierno { get; set; }
     
         public virtual ICollection<datoMeteorologico> datoMeteorologico { get; set; }
         public virtual ICollection<Incendio> Incendio { get; set; }
