@@ -56,5 +56,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
         public static readonly RoutedUICommand buscar = new RoutedUICommand();
 
         public static readonly RoutedUICommand limpiar = new RoutedUICommand();
+
+        public static readonly RoutedUICommand calcularProbabilidad = new RoutedUICommand();
     }
 }
