@@ -4,9 +4,50 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
+           xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
         mc:Ignorable="d"
-        Title="VentanaHistorialIncendios" Height="450" Width="800">
-    <Grid>
-        
+        Title="Ventana Registros Incendios" Height="469.637" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#EEDF49" WindowStyle="None" Loaded="Window_Loaded">
+    <Window.CommandBindings>
+        <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="Comprueba" Executed="Salir"/>
+        <CommandBinding Command="clases:Comandos.buscar" CanExecute="Comprueba" Executed="Buscar"/>
+        <CommandBinding Command="clases:Comandos.limpiar" CanExecute="Comprueba" Executed="Limpiar"/>
+    </Window.CommandBindings>
+    <Grid Width="800" Height="450">
+        <Button Content="Buscar" x:Name="btnEliminarIncendio" HorizontalAlignment="Left" Height="31" Margin="651,348,0,0" VerticalAlignment="Top" Width="111" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.buscar">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Volver atras" x:Name="btnVolverAtras" HorizontalAlignment="Left" Height="48" Margin="601.875,32.5,0,0" VerticalAlignment="Top" Width="160" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.volverAtras">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="45" Margin="82,31,0,0" TextWrapping="Wrap" Text="Historial de registros de incendios" VerticalAlignment="Top" Width="481" FontSize="28" Foreground="#FFEE4958"  FontFamily="Lucida Sans Unicode" />
+        <DataGrid x:Name="dgrIncendios" HorizontalAlignment="Left" Height="230" Margin="82,100,0,0" VerticalAlignment="Top" Width="640" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
+        </DataGrid>
+        <ComboBox x:Name="cmbProvincias" HorizontalAlignment="Left" Height="29" Margin="176,348,0,0" VerticalAlignment="Top" Width="160" FontSize="18" SelectionChanged="cmbProvincias_SelectionChanged"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="50,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" FontSize="20" Foreground="#EE4958"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="L"/><Run Text="ocalidad:"/></TextBlock>
+        <ComboBox x:Name="cmbLocalidades" HorizontalAlignment="Left" Height="29" Margin="176,405,0,0" VerticalAlignment="Top" Width="160" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="66,348,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="81" FontSize="18" Foreground="#EE4958"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Provinci"/><Run Text="a:"/></TextBlock>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="363,404,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="63" FontSize="20" Foreground="#EE4958"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167" Text="Hasta"/>
+        <DatePicker x:Name="dpkDesde" Focusable = "False" HorizontalAlignment="Left" Margin="443,349,0,0" VerticalAlignment="Top" Width="186" FontSize="16" Height="29" RenderTransformOrigin="0.55,0.567"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="363,349,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="62" FontSize="20" Foreground="#EE4958"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167" Text="Desde"/>
+        <DatePicker x:Name="dpkHasta" Focusable = "False" HorizontalAlignment="Left" Margin="443,406,0,0" VerticalAlignment="Top" Width="186" FontSize="16" Height="30"/>
+        <Button Content="Limpiar" x:Name="btnEliminarLimpiar" HorizontalAlignment="Left" Height="31" Margin="651,403,0,0" VerticalAlignment="Top" Width="111" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.limpiar">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
     </Grid>
 </Window>

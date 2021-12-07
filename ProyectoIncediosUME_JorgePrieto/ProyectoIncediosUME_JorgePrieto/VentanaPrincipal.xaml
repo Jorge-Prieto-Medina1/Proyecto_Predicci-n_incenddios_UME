@@ -58,7 +58,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <Button Content="Modificar datos metereológicos" x:Name="btnModificarDatosMeteorológicos" HorizontalAlignment="Left" Height="48" Margin="700,120,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="clases:Comandos.modificarDatosMeteorologicos">
+        <Button Content="Modificar datos climatológicos" x:Name="btnModificarDatosMeteorológicos" HorizontalAlignment="Left" Height="48" Margin="700,120,25,0" VerticalAlignment="Top" Width="270" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Visibility="Hidden" Command="clases:Comandos.modificarDatosMeteorologicos">
             <Button.Background>
                 <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
                     <GradientStop Color="#FFEEDF49" Offset="0"/>
