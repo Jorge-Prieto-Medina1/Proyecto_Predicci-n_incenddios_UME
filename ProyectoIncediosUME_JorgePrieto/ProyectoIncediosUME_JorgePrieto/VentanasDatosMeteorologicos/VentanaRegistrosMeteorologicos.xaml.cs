@@ -83,7 +83,7 @@ namespace ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos
         {
             if (this.dgrDatosMeteorologicos.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Seleccione un incendio");
+                MessageBox.Show("Seleccione un dato climatologico");
             }
             else
             {
@@ -106,13 +106,13 @@ namespace ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos
         {
             if (this.dgrDatosMeteorologicos.SelectedItems.Count == 0)
             {
-                MessageBox.Show("Seleccione un incendio");
+                MessageBox.Show("Seleccione un dato climatologico");
             }
             else
             {
                 int fila = this.dgrDatosMeteorologicos.SelectedIndex;
                 datoMeteorologico datoAModificar = this.listaDatos[fila];
-                VentanaModificarRegistrosMeteorologicos modificarDato = new VentanaModificarRegistrosMeteorologicos();
+                VentanaModificarRegistrosMeteorologicos modificarDato = new VentanaModificarRegistrosMeteorologicos(datoAModificar);
                 this.Hide();
                 modificarDato.ShowDialog();
                 this.Show();

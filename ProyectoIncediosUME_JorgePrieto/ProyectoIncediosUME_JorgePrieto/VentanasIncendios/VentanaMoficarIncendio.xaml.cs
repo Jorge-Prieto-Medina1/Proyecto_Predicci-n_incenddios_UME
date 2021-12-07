@@ -93,6 +93,7 @@ namespace ProyectoIncediosUME_JorgePrieto.VentanasIncendios
                             Incendio incendioModificar = new Incendio();
                             int IdLocalidad = incendioOriginal.idLocalidad;
                             incendioModificar.idLocalidad = IdLocalidad;
+                            incendioModificar.idIncendio = incendioOriginal.idIncendio;
                             incendioModificar.humedadMedia = humInt;
                             incendioModificar.temperaturaMedia = tempInt;
                             incendioModificar.hectareasQuemadas = hecInt;

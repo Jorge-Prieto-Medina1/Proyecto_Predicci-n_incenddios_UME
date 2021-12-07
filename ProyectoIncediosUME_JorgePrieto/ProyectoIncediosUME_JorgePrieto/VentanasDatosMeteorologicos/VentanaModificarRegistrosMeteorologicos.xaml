@@ -3,10 +3,45 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos"
-        mc:Ignorable="d"
-        Title="VentanaModificarRegistrosMeteorologicos" Height="450" Width="800">
+         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos"
+        xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+      mc:Ignorable="d"
+      Title="Ventana Para Añadir Registros Climaticos" Height="565.114" Width="626.25" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF499BEE" WindowStyle="None" Loaded="Window_Loaded">
+    <Window.CommandBindings>
+        <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="CompruebaSalir" Executed="Salir"/>
+        <CommandBinding Command="clases:Comandos.modificarDato" CanExecute="CompruebaModificaciones" Executed="Modificar"/>
+    </Window.CommandBindings>
+
     <Grid>
-        
+        <Button Content="Volver atras" x:Name="btnVolverAtras" HorizontalAlignment="Left" Height="41.767" Margin="406.413,37.105,0,0" VerticalAlignment="Top" Width="150.927" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.volverAtras">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#EEDF49" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="39.157" Margin="46.206,37.105,0,0" TextWrapping="Wrap" Text="Modificar registro" VerticalAlignment="Top" Width="312.936" FontSize="34" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="184.517,129.207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85.441" FontSize="18" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Provinci"/><Run Text="a:"/></TextBlock>
+        <TextBox x:Name="txtProvincia" HorizontalAlignment="Left" Height="29.368" Margin="302.149,129.207,0,0" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="167.642,196.1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102.316" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="L"/><Run Text="ocalidad:"/></TextBlock>
+        <TextBox x:Name="txtLocalidad" HorizontalAlignment="Left" Height="29.368" Margin="302.149,196.1,0,0" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <Button Content="Modificar" x:Name="btnAñadir" HorizontalAlignment="Left" Height="42" Margin="227,501,0,0" VerticalAlignment="Top" Width="151" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.modificarDato">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#EEDF49" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="80,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="201" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167" Text="Temperatura media:"/>
+        <TextBox MaxLength="3" x:Name="txtTempMed" HorizontalAlignment="Left" Height="30" Margin="302,262,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="110,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="160" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="HumedadMedia"/><Run Text=":"/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtHumMed" HorizontalAlignment="Left" Height="30" Margin="302,329,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="211" FontSize="18" RenderTransformOrigin="0.36,0.433"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="115,389,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="155" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167" Text="Fecha de inicio:"/>
+        <DatePicker x:Name="dpkFechaInicio" Focusable = "False" HorizontalAlignment="Left" Margin="302,387,0,0" VerticalAlignment="Top" Width="211" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="30" Margin="46,441,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="224" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Fecha de finalizaci"/><Run Text="ó"/><Run Text="n:"/></TextBlock>
+        <DatePicker x:Name="dpkFechaFinalizacion" Focusable = "False" HorizontalAlignment="Left" Margin="302,441,0,0" VerticalAlignment="Top" Width="211" FontSize="18"/>
     </Grid>
 </Window>

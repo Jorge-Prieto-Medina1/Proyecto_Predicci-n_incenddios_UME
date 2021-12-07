@@ -418,7 +418,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
         {
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
-                Incendio incendioOriginal = baseDeDatos.Incendio.First(x => x.idLocalidad == incendioModificado.idLocalidad);
+                Incendio incendioOriginal = baseDeDatos.Incendio.First(x => x.idIncendio == incendioModificado.idIncendio);
                 incendioOriginal.temperaturaMedia = incendioModificado.temperaturaMedia;
                 incendioOriginal.humedadMedia = incendioModificado.humedadMedia;
                 incendioOriginal.hectareasQuemadas = incendioModificado.hectareasQuemadas;
@@ -450,6 +450,91 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
             }
 
         }
+
+        public Boolean buscarDatoConMismaFecha(int IdLocalidad, DateTime FechaInicio, DateTime FechaFinalizacion)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                Boolean resultado = true;
+                var consultaDato = from busqueda in baseDeDatos.datoMeteorologico
+                                   where busqueda.idLocalidad == IdLocalidad
+                                   && ((busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
+                                   || (busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaInicio)
+                                   || (busqueda.fechaDeInicio <= FechaFinalizacion && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
+                                   || (busqueda.fechaDeInicio >= FechaFinalizacion && busqueda.fechaDeFinalizacion <= FechaFinalizacion))
+                                   select new { busqueda.idDato };
+
+
+                if (consultaDato.Count() != 0)
+                {
+
+                    resultado = true;
+
+                }
+                else
+                {
+                    resultado = false;
+                }
+
+                return resultado;
+            }
+
+        }
+
+        public Boolean buscarDatoConMismaFechaModificar(int IdDato, int IdLocalidad, DateTime FechaInicio, DateTime FechaFinalizacion)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                Boolean resultado = true;
+                var consultaDato = from busqueda in baseDeDatos.datoMeteorologico
+                                   where busqueda.idLocalidad == IdLocalidad
+                                   && ((busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
+                                   || (busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaInicio)
+                                   || (busqueda.fechaDeInicio <= FechaFinalizacion && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
+                                   || (busqueda.fechaDeInicio >= FechaFinalizacion && busqueda.fechaDeFinalizacion <= FechaFinalizacion))
+                                   && busqueda.idDato != IdDato
+                                   select new { busqueda.idDato };
+
+
+                if (consultaDato.Count() != 0)
+                {
+
+                    resultado = true;
+
+                }
+                else
+                {
+                    resultado = false;
+                }
+
+                return resultado;
+            }
+
+        }
+
+
+        public void insertarDato(datoMeteorologico datoInsertar)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                baseDeDatos.datoMeteorologico.Add(datoInsertar);
+                baseDeDatos.SaveChanges();
+            }
+        }
+
+        public void modificarDato(datoMeteorologico datoModificado)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                datoMeteorologico datoOriginal = baseDeDatos.datoMeteorologico.First(x => x.idDato == datoModificado.idDato);
+                datoOriginal.temperaturaMedia = datoModificado.temperaturaMedia;
+                datoOriginal.humedadMedia = datoModificado.humedadMedia;
+                datoOriginal.fechaDeInicio = datoModificado.fechaDeInicio;
+                datoOriginal.fechaDeFinalizacion = datoModificado.fechaDeFinalizacion;
+                baseDeDatos.SaveChanges();
+            }
+        }
+        
     }
 
 }
