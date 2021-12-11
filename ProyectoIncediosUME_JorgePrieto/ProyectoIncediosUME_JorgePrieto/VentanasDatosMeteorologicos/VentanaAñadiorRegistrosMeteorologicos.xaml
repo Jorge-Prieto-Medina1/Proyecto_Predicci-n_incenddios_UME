@@ -22,7 +22,7 @@
                 </LinearGradientBrush>
             </Button.Background>
         </Button>
-        <TextBlock HorizontalAlignment="Left" Height="39.157" Margin="46.206,37.105,0,0" TextWrapping="Wrap" Text="Añadir incendio" VerticalAlignment="Top" Width="312.936" FontSize="34" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode"/>
+        <TextBlock HorizontalAlignment="Left" Height="39.157" Margin="46.206,37.105,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="312.936" FontSize="34" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode"><Run Text="Añadir "/><Run Text="Registro"/></TextBlock>
         <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="184.517,129.207,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85.441" FontSize="18" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Provinci"/><Run Text="a:"/></TextBlock>
         <ComboBox x:Name="cmbProvincias" HorizontalAlignment="Left" Height="29.368" Margin="302.149,129.207,0,0" VerticalAlignment="Top" Width="210.559" FontSize="18" SelectionChanged="cmbProvincias_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="167.642,196.1,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="102.316" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="L"/><Run Text="ocalidad:"/></TextBlock>

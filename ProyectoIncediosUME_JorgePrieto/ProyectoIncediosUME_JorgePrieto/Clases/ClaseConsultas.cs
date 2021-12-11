@@ -21,7 +21,6 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                                      where busqueda.correoUsuario.Contains(Correo)
                                      select new { busqueda.contrasenaUsuario, busqueda.activo };
 
-
                 if (consultaCorreo.Count() != 0)
                 {
                     resultado[0] = true;
@@ -50,8 +49,6 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                     resultado[1] = false;
                     resultado[2] = false;
                 }
-
-
             }
 
             return resultado;
@@ -337,19 +334,14 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
                 String[] nombres = new string[2];
-                var consultaNombreLocalidad = from busqueda in baseDeDatos.localidad
-                                              where busqueda.idLocalidad == IdLocalidad
-                                              select new { busqueda.nombreLocalidad, busqueda.idProvincia };
+                var consultaNombreLocalidad = from localidad in baseDeDatos.localidad
+                                              join provincia in baseDeDatos.provincia on
+                                              localidad.idProvincia equals provincia.idProvincia
+                                              where localidad.idLocalidad == IdLocalidad
+                                              select new { provincia.nombreProvincia, localidad.nombreLocalidad};
 
                 nombres[0] = consultaNombreLocalidad.FirstOrDefault().nombreLocalidad;
-                int IdProvincia = consultaNombreLocalidad.FirstOrDefault().idProvincia;
-
-                var consultaNombreProvincia = from busqueda in baseDeDatos.provincia
-                                              where busqueda.idProvincia == IdProvincia
-                                              select new { busqueda.nombreProvincia };
-
-                nombres[1] = consultaNombreProvincia.FirstOrDefault().nombreProvincia;
-
+                nombres[1] = consultaNombreLocalidad.FirstOrDefault().nombreProvincia;
                 return nombres;
             }
         }
@@ -366,18 +358,15 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
 
         }
 
-        public List<String> cargarLocalidades(String provincia)
+        public List<String> cargarLocalidades(String Provincia)
         {
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
-                var consultaProvincia = from busqueda in baseDeDatos.provincia
-                                        where busqueda.nombreProvincia.Equals(provincia)
-                                        select new { busqueda.idProvincia };
-                var IdProvincia = consultaProvincia.First().idProvincia;
-
-                var consultaLocalidad = from busqueda in baseDeDatos.localidad
-                                        where busqueda.idProvincia == IdProvincia
-                                        select new { busqueda.nombreLocalidad };
+                var consultaLocalidad= from localidad in baseDeDatos.localidad
+                                       join provincia in baseDeDatos.provincia
+                                       on localidad.idProvincia equals provincia.idProvincia
+                                       where provincia.nombreProvincia.Equals(Provincia)
+                                       select new { localidad.nombreLocalidad };
 
                 List<String> listaLocalidades = new List<String>();
                 foreach (var localidad in consultaLocalidad)
@@ -459,6 +448,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                 var consultaDato = from busqueda in baseDeDatos.datoMeteorologico
                                    where busqueda.idLocalidad == IdLocalidad
                                    && ((busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
+                                   || (busqueda.fechaDeInicio >= FechaInicio && busqueda.fechaDeFinalizacion <= FechaFinalizacion)
                                    || (busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaInicio)
                                    || (busqueda.fechaDeInicio <= FechaFinalizacion && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
                                    || (busqueda.fechaDeInicio >= FechaFinalizacion && busqueda.fechaDeFinalizacion <= FechaFinalizacion))
@@ -489,6 +479,7 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                 var consultaDato = from busqueda in baseDeDatos.datoMeteorologico
                                    where busqueda.idLocalidad == IdLocalidad
                                    && ((busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
+                                   || (busqueda.fechaDeInicio >= FechaInicio && busqueda.fechaDeFinalizacion <= FechaFinalizacion)
                                    || (busqueda.fechaDeInicio <= FechaInicio && busqueda.fechaDeFinalizacion >= FechaInicio)
                                    || (busqueda.fechaDeInicio <= FechaFinalizacion && busqueda.fechaDeFinalizacion >= FechaFinalizacion)
                                    || (busqueda.fechaDeInicio >= FechaFinalizacion && busqueda.fechaDeFinalizacion <= FechaFinalizacion))
@@ -724,19 +715,19 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
 
                 if (probabilidadInt >= 7)
                 {
-                    probabilidad = ("Muy alta");
+                    probabilidad = ("Muy alto");
                 }
                 else if (probabilidadInt <= 6 && probabilidadInt >= 4)
                 {
-                    probabilidad = ("Alta");
+                    probabilidad = ("Alto");
                 }
                 else if (probabilidadInt <= 3 && probabilidadInt >= 1)
                 {
-                    probabilidad = ("Media");
+                    probabilidad = ("Medio");
                 }
                 else if (probabilidadInt <= 0)
                 {
-                    probabilidad = ("Baja");
+                    probabilidad = ("Bajo");
                 }
                 return probabilidad;
 

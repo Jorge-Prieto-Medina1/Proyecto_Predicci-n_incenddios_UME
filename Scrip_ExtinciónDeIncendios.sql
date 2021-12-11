@@ -128,17 +128,37 @@ INSERT INTO provincia VALUES ('Melilla');
 
 INSERT INTO localidad Values ( 1, 'Alcalá del Júcar','15', '20', '30', '10', '10', '30', '0', '30');
 INSERT INTO localidad Values ( 2, 'Denia','17', '22', '30', '14', '14', '32', '5', '20');
+INSERT INTO localidad Values ( 3, 'Níjar','12', '25', '34', '23', '12', '22', '5', '20');
+INSERT INTO localidad Values ( 4, 'Ayala','18', '22', '30', '14', '14', '32', '5', '20');
+INSERT INTO localidad Values ( 5, 'Lastres','30', '22', '30', '14', '14', '32', '5', '20');
+INSERT INTO localidad Values ( 6, 'Mérida','13', '2', '35', '49', '14', '32', '5', '20');
 go
 
-INSERT INTO datoMeteorologico Values ( 2, '17', '22', '18-06-12', '18-06-12');
+INSERT INTO DatoMeteorologico Values ( 1, '17', '22', '1-06-20', '18-06-20');
+INSERT INTO DatoMeteorologico Values ( 2, '17', '22', '1-06-20', '18-06-20');
+INSERT INTO DatoMeteorologico Values ( 3, '17', '22', '1-06-20', '18-06-20');
+INSERT INTO DatoMeteorologico Values ( 4, '17', '22', '1-06-20', '18-06-20');
+INSERT INTO DatoMeteorologico Values ( 5, '17', '22', '1-06-20', '18-06-20');
+INSERT INTO DatoMeteorologico Values ( 6, '17', '22', '1-06-20', '18-06-20');
 go
 
+INSERT INTO Incendio Values ( 1, '2000', '17', '22', '18-06-12', '18-06-12');
 INSERT INTO Incendio Values ( 2, '2000', '17', '22', '18-06-12', '18-06-12');
+INSERT INTO Incendio Values ( 3, '2000', '17', '22', '18-06-12', '18-06-12');
+INSERT INTO Incendio Values ( 4, '2000', '17', '22', '18-06-12', '18-06-12');
+INSERT INTO Incendio Values ( 5, '2000', '17', '22', '18-06-12', '18-06-12');
 go
 
 delete from datoMeteorologico where idLocalidad = 2;
 
 INSERT INTO Usuario VALUES ('jorge', 'jorge@hotmail.com', '1234', 'Activo');
+INSERT INTO Usuario VALUES ('admin', 'admin@email.com', '1234', 'Inactivo');
+INSERT INTO Usuario VALUES ('bombero', 'bombero@email.com', '1234', 'Inactivo');
+INSERT INTO Usuario VALUES ('adminume', 'ume@email.com', '1234', 'Inactivo');
 INSERT INTO Usuario VALUES ('123', '123', '123', 'Activo');
 
 Go
+
+select * from localidad where idLocalidad = 1;
+
+select * from datoMeteorologico where idLocalidad = 1;
