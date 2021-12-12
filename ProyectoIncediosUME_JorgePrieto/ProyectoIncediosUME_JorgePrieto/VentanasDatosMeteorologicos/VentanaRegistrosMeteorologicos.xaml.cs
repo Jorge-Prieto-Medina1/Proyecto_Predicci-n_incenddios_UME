@@ -130,7 +130,7 @@ namespace ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos
             {
                 int idLocalidad = dato.idLocalidad;
                 String[] nombres = consultas.buscarNombreLocalidadPrivincia(idLocalidad);
-                DatosMeteorologicosAVisualizar datoNuevo = new DatosMeteorologicosAVisualizar(nombres[0], nombres[1], dato.temperaturaMedia.ToString() , dato.fechaDeInicio.ToString().Substring(0, 10), dato.fechaDeFinalizacion.ToString().Substring(0, 10));
+                DatosMeteorologicosAVisualizar datoNuevo = new DatosMeteorologicosAVisualizar(nombres[1], nombres[0], dato.temperaturaMedia.ToString() , dato.fechaDeInicio.ToString().Substring(0, 10), dato.fechaDeFinalizacion.ToString().Substring(0, 10));
                 this.listaDGRDatos.Add(datoNuevo);
             }
             this.dgrDatosMeteorologicos.ItemsSource = listaDGRDatos;

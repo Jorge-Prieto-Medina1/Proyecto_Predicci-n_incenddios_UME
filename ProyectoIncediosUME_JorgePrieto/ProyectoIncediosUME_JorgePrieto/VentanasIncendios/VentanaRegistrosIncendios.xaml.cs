@@ -130,7 +130,7 @@ namespace ProyectoIncediosUME_JorgePrieto.VentanasIncendios
             {
                 int idLocalidad = incendio.idLocalidad;
                 String [] nombres = consultas.buscarNombreLocalidadPrivincia(idLocalidad);
-                IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.temperaturaMedia.Value, incendio.humedadMedia.Value, incendio.hectareasQuemadas.Value, incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
+                IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[1], nombres[0], incendio.temperaturaMedia.Value, incendio.humedadMedia.Value, incendio.hectareasQuemadas.Value, incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
                 this.listaDGRIncendios.Add(incendioNuevo);
             }
             this.dgrIncendios.ItemsSource = listaDGRIncendios;
