@@ -1,0 +1,55 @@
+﻿<Window x:Class="ProyectoIncediosUME_JorgePrieto.VentanasLocalidad.VentanaAñadirLocalidades"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
+        xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
+        xmlns:xctk="http://schemas.xceed.com/wpf/xaml/toolkit"
+        mc:Ignorable="d"
+        Title="Ventana Para Añadir Localidades" Height="590" Width="1200" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#FF499BEE" WindowStyle="None" Loaded="Window_Loaded">
+    <Window.CommandBindings>
+        <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="CompruebaSalir" Executed="Salir"/>
+        <CommandBinding Command="clases:Comandos.añadirLocalidad" CanExecute="CompruebaModificaciones" Executed="Añdair"/>
+    </Window.CommandBindings>
+
+    <Grid>
+        <Button Content="Volver atras" x:Name="btnVolverAtras" HorizontalAlignment="Left" Height="41.767" Margin="821.634,32.625,0,0" VerticalAlignment="Top" Width="150.927" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.volverAtras">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEDF49" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="39.157" Margin="293.335,35.235,0,0" TextWrapping="Wrap" Text="Añadir Localidad" VerticalAlignment="Top" Width="312.936" FontSize="34" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="244.149,121.707,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="85.441" FontSize="18" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Provinci"/><Run Text="a:"/></TextBlock>
+        <ComboBox x:Name="cmbProvincias" HorizontalAlignment="Left" Height="29.368" Margin="361.781,121.707,0,0" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="95.284,188.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="234.306" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167" Text="Nombre de la localidad:"/>
+        <TextBox MaxLength="80" x:Name="txtNombreLocalidad" HorizontalAlignment="Left" Height="29.368" Margin="361.781,188.6,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <Button Content="Añadir" x:Name="btnAñadir" HorizontalAlignment="Left" Height="41.768" Margin="361.781,521.434,0,0" VerticalAlignment="Top" Width="150.927" Foreground="#FF3679CD" FontSize="18" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.añadirLocalidad">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FFEEDF49" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="25.625,252.23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="303.965" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Temperatura Media "/><Run Text="Primavera"/><Run Text=": "/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtTempPrim"  HorizontalAlignment="Left" Height="29.368" Margin="361.781,252.23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="53.066,319.123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="276.524" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Temperatura Media "/><Run Text="Verano:"/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtTempVer" HorizontalAlignment="Left" Height="29.368" Margin="361.781,319.123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.367" Margin="64.148,386.017,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="265.442" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Temperatura Media "/><Run Text="Otoño:"/><Run Text=" "/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtTempOto" HorizontalAlignment="Left" Height="29.367" Margin="361.781,386.017,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.367" Margin="46.206,446.384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="283.384" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Temperatura Media "/><Run Text="Invierno"/><Run Text=": "/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtTempInv" HorizontalAlignment="Left" Height="29.367" Margin="361.781,446.384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="631.972,252.23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="272.302" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Humedad"/><Run Text=" Media "/><Run Text="Primavera"/><Run Text=": "/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtHumPrim" HorizontalAlignment="Left" Height="29.368" Margin="931.716,252.23,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.368" Margin="659.413,319.123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="244.861" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Humedad "/><Run Text="Media "/><Run Text="Verano:"/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtHumVer" HorizontalAlignment="Left" Height="29.368" Margin="931.716,319.123,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.367" Margin="670.496,386.017,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="233.778" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Humedad "/><Run Text="Media "/><Run Text="Otoño:"/><Run Text=" "/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtHumOto" HorizontalAlignment="Left" Height="29.367" Margin="931.716,386.017,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+        <TextBlock HorizontalAlignment="Left" Height="29.367" Margin="652.553,446.384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="251.721" FontSize="20" Foreground="#FFEEDF49"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="Humedad "/><Run Text="Media Invierno"/><Run Text=": "/></TextBlock>
+        <TextBox MaxLength="3" x:Name="txtHumInv" HorizontalAlignment="Left" Height="29.367" Margin="931.716,446.384,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="210.559" FontSize="18"/>
+    </Grid>
+</Window>

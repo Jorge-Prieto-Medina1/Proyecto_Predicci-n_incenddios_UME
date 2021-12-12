@@ -1,0 +1,120 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="prediccion_incendiosModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="datoMeteorologico">
+    <Key>
+      <PropertyRef Name="idDato" />
+    </Key>
+    <Property Name="idDato" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idLocalidad" Type="Int32" Nullable="false" />
+    <Property Name="temperaturaMedia" Type="Double" />
+    <Property Name="humedadMedia" Type="Double" />
+    <Property Name="fechaDeInicio" Type="DateTime" Precision="0" />
+    <Property Name="fechaDeFinalizacion" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="localidad" Relationship="Self.FK__datoMeteo__idLoc__2B3F6F97" FromRole="datoMeteorologico" ToRole="localidad" />
+  </EntityType>
+  <EntityType Name="Incendio">
+    <Key>
+      <PropertyRef Name="idIncendio" />
+    </Key>
+    <Property Name="idIncendio" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idLocalidad" Type="Int32" Nullable="false" />
+    <Property Name="hectareasQuemadas" Type="Int32" />
+    <Property Name="temperaturaMedia" Type="Double" />
+    <Property Name="humedadMedia" Type="Double" />
+    <Property Name="fechaDeInicio" Type="DateTime" Precision="0" />
+    <Property Name="fechaDeExtinción" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="localidad" Relationship="Self.FK__Incendio__idLoca__2E1BDC42" FromRole="Incendio" ToRole="localidad" />
+  </EntityType>
+  <EntityType Name="localidad">
+    <Key>
+      <PropertyRef Name="idLocalidad" />
+    </Key>
+    <Property Name="idLocalidad" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="idProvincia" Type="Int32" Nullable="false" />
+    <Property Name="nombreLocalidad" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="temperaturaMediaPrimavera" Type="Int32" />
+    <Property Name="humedadMediaPrimavera" Type="Int32" />
+    <Property Name="temperaturaMediaVerano" Type="Int32" />
+    <Property Name="humedadMediaVerano" Type="Int32" />
+    <Property Name="temperaturaMediaOtoño" Type="Int32" />
+    <Property Name="humedadMediaOtoño" Type="Int32" />
+    <Property Name="temperaturaMediaInvierno" Type="Int32" />
+    <Property Name="humedadMediaInvierno" Type="Int32" />
+    <NavigationProperty Name="datoMeteorologico" Relationship="Self.FK__datoMeteo__idLoc__2B3F6F97" FromRole="localidad" ToRole="datoMeteorologico" />
+    <NavigationProperty Name="Incendio" Relationship="Self.FK__Incendio__idLoca__2E1BDC42" FromRole="localidad" ToRole="Incendio" />
+    <NavigationProperty Name="provincia" Relationship="Self.FK__localidad__idPro__286302EC" FromRole="localidad" ToRole="provincia" />
+  </EntityType>
+  <EntityType Name="provincia">
+    <Key>
+      <PropertyRef Name="idProvincia" />
+    </Key>
+    <Property Name="idProvincia" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreProvincia" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <NavigationProperty Name="localidad" Relationship="Self.FK__localidad__idPro__286302EC" FromRole="provincia" ToRole="localidad" />
+  </EntityType>
+  <EntityType Name="usuario">
+    <Key>
+      <PropertyRef Name="idUsuario" />
+    </Key>
+    <Property Name="idUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nombreUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="correoUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="contrasenaUsuario" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+    <Property Name="activo" Type="String" MaxLength="80" FixedLength="false" Unicode="false" />
+  </EntityType>
+  <Association Name="FK__datoMeteo__idLoc__2B3F6F97">
+    <End Role="localidad" Type="Self.localidad" Multiplicity="1" />
+    <End Role="datoMeteorologico" Type="Self.datoMeteorologico" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="localidad">
+        <PropertyRef Name="idLocalidad" />
+      </Principal>
+      <Dependent Role="datoMeteorologico">
+        <PropertyRef Name="idLocalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__Incendio__idLoca__2E1BDC42">
+    <End Role="localidad" Type="Self.localidad" Multiplicity="1" />
+    <End Role="Incendio" Type="Self.Incendio" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="localidad">
+        <PropertyRef Name="idLocalidad" />
+      </Principal>
+      <Dependent Role="Incendio">
+        <PropertyRef Name="idLocalidad" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK__localidad__idPro__286302EC">
+    <End Role="provincia" Type="Self.provincia" Multiplicity="1" />
+    <End Role="localidad" Type="Self.localidad" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="provincia">
+        <PropertyRef Name="idProvincia" />
+      </Principal>
+      <Dependent Role="localidad">
+        <PropertyRef Name="idProvincia" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="prediccionIncendiosEntites" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="datoMeteorologico" EntityType="Self.datoMeteorologico" />
+    <EntitySet Name="Incendio" EntityType="Self.Incendio" />
+    <EntitySet Name="localidad" EntityType="Self.localidad" />
+    <EntitySet Name="provincia" EntityType="Self.provincia" />
+    <EntitySet Name="usuario" EntityType="Self.usuario" />
+    <AssociationSet Name="FK__datoMeteo__idLoc__2B3F6F97" Association="Self.FK__datoMeteo__idLoc__2B3F6F97">
+      <End Role="localidad" EntitySet="localidad" />
+      <End Role="datoMeteorologico" EntitySet="datoMeteorologico" />
+    </AssociationSet>
+    <AssociationSet Name="FK__Incendio__idLoca__2E1BDC42" Association="Self.FK__Incendio__idLoca__2E1BDC42">
+      <End Role="localidad" EntitySet="localidad" />
+      <End Role="Incendio" EntitySet="Incendio" />
+    </AssociationSet>
+    <AssociationSet Name="FK__localidad__idPro__286302EC" Association="Self.FK__localidad__idPro__286302EC">
+      <End Role="provincia" EntitySet="provincia" />
+      <End Role="localidad" EntitySet="localidad" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

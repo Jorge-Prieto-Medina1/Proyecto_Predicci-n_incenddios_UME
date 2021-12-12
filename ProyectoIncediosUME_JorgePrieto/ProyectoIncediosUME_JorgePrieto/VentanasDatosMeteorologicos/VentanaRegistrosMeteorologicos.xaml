@@ -1,0 +1,53 @@
+﻿<Window x:Class="ProyectoIncediosUME_JorgePrieto.VentanasDatosMeteorologicos.VentanaRegistrosMeteorologicos"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+       xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
+        mc:Ignorable="d"
+        Title="Ventana Registros Climatologicos" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#499BEE" WindowStyle="None" Loaded="Window_Loaded">
+    <Window.CommandBindings>
+        <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="CompruebaSalir" Executed="Salir"/>
+        <CommandBinding Command="clases:Comandos.eliminarDato" CanExecute="CompruebaModificaciones" Executed="BorrarRegistro"/>
+        <CommandBinding Command="clases:Comandos.añadirDato" CanExecute="CompruebaModificaciones" Executed="AñadirRegistro"/>
+        <CommandBinding Command="clases:Comandos.modificarDato" CanExecute="CompruebaModificaciones" Executed="ModificarRegistro"/>
+    </Window.CommandBindings>
+    <Grid Width="800" Height="450">
+        <Button Content="Añadir Registro" x:Name="btnAñadirDato" HorizontalAlignment="Left" Height="48" Margin="30.625,359.625,0,0" VerticalAlignment="Top" Width="200" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.añadirDato">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Eliminar Registro" x:Name="btnEliminarDato" HorizontalAlignment="Left" Height="48" Margin="562,360,0,0" VerticalAlignment="Top" Width="200" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.eliminarDato">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button Content="Volver atras" x:Name="btnVolverAtras" HorizontalAlignment="Left" Height="48" Margin="602,24,0,0" VerticalAlignment="Top" Width="160" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.volverAtras">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <TextBlock HorizontalAlignment="Left" Height="45" Margin="60,25,0,0" TextWrapping="Wrap" Text="Modificación de registros climatológicos" VerticalAlignment="Top" Width="517" FontSize="26" Foreground="#EEDF49"  FontFamily="Lucida Sans Unicode" />
+        <DataGrid x:Name="dgrDatosMeteorologicos" HorizontalAlignment="Left" Height="230" Margin="31,103,0,0" VerticalAlignment="Top" Width="731" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
+        </DataGrid>
+        <Button Content="Modificar Registro" x:Name="btnModificarDato" HorizontalAlignment="Left" Height="48" Margin="291,360,0,0" VerticalAlignment="Top" Width="200" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.modificarDato">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#53C27D" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

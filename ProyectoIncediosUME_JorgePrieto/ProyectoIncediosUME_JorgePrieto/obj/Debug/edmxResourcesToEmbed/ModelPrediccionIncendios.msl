@@ -1,0 +1,67 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="prediccion_incendiosModelStoreContainer" CdmEntityContainer="prediccion_incendiosEntitiesData">
+    <EntitySetMapping Name="datoMeteorologico">
+      <EntityTypeMapping TypeName="prediccion_incendiosModel.datoMeteorologico">
+        <MappingFragment StoreEntitySet="datoMeteorologico">
+          <ScalarProperty Name="idDato" ColumnName="idDato" />
+          <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
+          <ScalarProperty Name="temperaturaMedia" ColumnName="temperaturaMedia" />
+          <ScalarProperty Name="humedadMedia" ColumnName="humedadMedia" />
+          <ScalarProperty Name="fechaDeInicio" ColumnName="fechaDeInicio" />
+          <ScalarProperty Name="fechaDeFinalizacion" ColumnName="fechaDeFinalizacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Incendio">
+      <EntityTypeMapping TypeName="prediccion_incendiosModel.Incendio">
+        <MappingFragment StoreEntitySet="Incendio">
+          <ScalarProperty Name="idIncendio" ColumnName="idIncendio" />
+          <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
+          <ScalarProperty Name="hectareasQuemadas" ColumnName="hectareasQuemadas" />
+          <ScalarProperty Name="temperaturaMedia" ColumnName="temperaturaMedia" />
+          <ScalarProperty Name="humedadMedia" ColumnName="humedadMedia" />
+          <ScalarProperty Name="fechaDeInicio" ColumnName="fechaDeInicio" />
+          <ScalarProperty Name="fechaDeExtinción" ColumnName="fechaDeExtinción" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="localidad">
+      <EntityTypeMapping TypeName="prediccion_incendiosModel.localidad">
+        <MappingFragment StoreEntitySet="localidad">
+          <ScalarProperty Name="idLocalidad" ColumnName="idLocalidad" />
+          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+          <ScalarProperty Name="nombreLocalidad" ColumnName="nombreLocalidad" />
+          <ScalarProperty Name="fotoLocalidad" ColumnName="fotoLocalidad" />
+          <ScalarProperty Name="temperaturaMediaPrimavera" ColumnName="temperaturaMediaPrimavera" />
+          <ScalarProperty Name="humedadMediaPrimavera" ColumnName="humedadMediaPrimavera" />
+          <ScalarProperty Name="temperaturaMediaVerano" ColumnName="temperaturaMediaVerano" />
+          <ScalarProperty Name="humedadMediaVerano" ColumnName="humedadMediaVerano" />
+          <ScalarProperty Name="temperaturaMediaOtoño" ColumnName="temperaturaMediaOtoño" />
+          <ScalarProperty Name="humedadMediaOtoño" ColumnName="humedadMediaOtoño" />
+          <ScalarProperty Name="temperaturaMediaInvierno" ColumnName="temperaturaMediaInvierno" />
+          <ScalarProperty Name="humedadMediaInvierno" ColumnName="humedadMediaInvierno" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="provincia">
+      <EntityTypeMapping TypeName="prediccion_incendiosModel.provincia">
+        <MappingFragment StoreEntitySet="provincia">
+          <ScalarProperty Name="idProvincia" ColumnName="idProvincia" />
+          <ScalarProperty Name="nombreProvincia" ColumnName="nombreProvincia" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="usuario">
+      <EntityTypeMapping TypeName="prediccion_incendiosModel.usuario">
+        <MappingFragment StoreEntitySet="usuario">
+          <ScalarProperty Name="idUsuario" ColumnName="idUsuario" />
+          <ScalarProperty Name="nombreUsuario" ColumnName="nombreUsuario" />
+          <ScalarProperty Name="correoUsuario" ColumnName="correoUsuario" />
+          <ScalarProperty Name="contrasenaUsuario" ColumnName="contrasenaUsuario" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
