@@ -661,52 +661,52 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
 
                 int probabilidadInt = 0;
 
-                if (incendios <= 1)
+                if (incendios == 1)
                 {
-                    probabilidadInt = probabilidadInt + 1;
+                    probabilidadInt++;
                 }
                 else if (incendios >= 2 && incendios <= 5)
                 {
-                    probabilidadInt = probabilidadInt + 2;
+                    probabilidadInt += 2;
                 }
                 else if (incendios > 5)
                 {
-                    probabilidadInt = probabilidadInt + 3;
+                    probabilidadInt += 3;
                 }
 
 
                 if (temperatura <= 0 && temperatura >= -20)
                 {
-                    probabilidadInt = probabilidadInt - 1;
+                    probabilidadInt--;
                 }
                 else if (temperatura < -20)
                 {
-                    probabilidadInt = probabilidadInt - 2;
+                    probabilidadInt -= 2;
                 }
                 else if (temperatura >= 15 && temperatura <= 30)
                 {
-                    probabilidadInt = probabilidadInt + 1;
+                    probabilidadInt++;
                 }
                 else if (temperatura > 30)
                 {
-                    probabilidadInt = probabilidadInt + 2;
+                    probabilidadInt += 2;
                 }
 
                 if (humedad >= 0 && humedad <= 20)
                 {
-                    probabilidadInt = probabilidadInt + 2;
+                    probabilidadInt += 2;
                 }
                 else if (humedad > 20 && humedad <= 40)
                 {
-                    probabilidadInt = probabilidadInt + 1;
+                    probabilidadInt++;
                 }
                 else if (humedad >= 60 && humedad <= 80)
                 {
-                    probabilidadInt = probabilidadInt - 1;
+                    probabilidadInt--;
                 }
                 else if (humedad > 80)
                 {
-                    probabilidadInt = probabilidadInt - 2;
+                    probabilidadInt -= 2;
                 }
 
                 if (probabilidadInt >= 7)
