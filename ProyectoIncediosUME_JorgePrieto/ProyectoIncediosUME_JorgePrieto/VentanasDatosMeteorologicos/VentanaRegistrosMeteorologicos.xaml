@@ -38,7 +38,7 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="45" Margin="60,25,0,0" TextWrapping="Wrap" Text="Modificación de registros climatológicos" VerticalAlignment="Top" Width="517" FontSize="26" Foreground="#EEDF49"  FontFamily="Lucida Sans Unicode" />
-        <DataGrid x:Name="dgrDatosMeteorologicos" HorizontalAlignment="Left" Height="230" Margin="31,103,0,0" VerticalAlignment="Top" Width="731" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
+        <DataGrid x:Name="dgrDatosMeteorologicos" HorizontalAlignment="Left" Height="240" Margin="20,95,0,0" VerticalAlignment="Top" Width="750" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
         </DataGrid>
         <Button Content="Modificar Registro" x:Name="btnModificarDato" HorizontalAlignment="Left" Height="48" Margin="291,360,0,0" VerticalAlignment="Top" Width="200" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.modificarDato">
             <Button.Background>
