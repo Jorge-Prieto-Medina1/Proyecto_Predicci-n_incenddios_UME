@@ -350,7 +350,6 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
         {
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
-
                 Incendio IncendioAEliminar = baseDeDatos.Incendio.First(x => x.idIncendio == IdIncendio);
                 baseDeDatos.Incendio.Remove(IncendioAEliminar);
                 baseDeDatos.SaveChanges();
@@ -432,7 +431,6 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
         {
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
             {
-
                 datoMeteorologico DatoAEliminar = baseDeDatos.datoMeteorologico.First(x => x.idDato == IdDato);
                 baseDeDatos.datoMeteorologico.Remove(DatoAEliminar);
                 baseDeDatos.SaveChanges();
@@ -471,6 +469,15 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
 
         }
 
+        public void insertarDato(datoMeteorologico datoInsertar)
+        {
+            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
+            {
+                baseDeDatos.datoMeteorologico.Add(datoInsertar);
+                baseDeDatos.SaveChanges();
+            }
+        }
+
         public Boolean buscarDatoConMismaFechaModificar(int IdDato, int IdLocalidad, DateTime FechaInicio, DateTime FechaFinalizacion)
         {
             using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
@@ -501,16 +508,6 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                 return resultado;
             }
 
-        }
-
-
-        public void insertarDato(datoMeteorologico datoInsertar)
-        {
-            using (prediccion_incendiosEntitiesDB baseDeDatos = new prediccion_incendiosEntitiesDB())
-            {
-                baseDeDatos.datoMeteorologico.Add(datoInsertar);
-                baseDeDatos.SaveChanges();
-            }
         }
 
         public void modificarDato(datoMeteorologico datoModificado)
@@ -657,7 +654,6 @@ namespace ProyectoIncediosUME_JorgePrieto.Clases
                             temperatura = consultaLocalidad.First().temperaturaMediaInvierno.Value;
                             humedad = consultaLocalidad.First().humedadMediaInvierno.Value;
                             break;
-
                     }
 
                   

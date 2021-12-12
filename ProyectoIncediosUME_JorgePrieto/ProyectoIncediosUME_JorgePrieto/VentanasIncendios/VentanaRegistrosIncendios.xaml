@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
         xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
         mc:Ignorable="d"
-        Title="Ventana Registros Incendios" Height="450" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#EEDF49" WindowStyle="None" Loaded="Window_Loaded">
+        Title="Ventana Registros Incendios" Height="450" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#EEDF49" WindowStyle="None" Loaded="Window_Loaded">
     <Window.CommandBindings>
         <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="CompruebaSalir" Executed="Salir"/>
         <CommandBinding Command="clases:Comandos.eliminarIncendio" CanExecute="CompruebaModificaciones" Executed="BorrarRegistro"/>
@@ -39,7 +39,7 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="45" Margin="216.875,24.467,0,0" TextWrapping="Wrap" Text="Registros de incendios" VerticalAlignment="Top" Width="380" FontSize="34" Foreground="#FFEE4958"  FontFamily="Lucida Sans Unicode" />
-        <DataGrid x:Name="dgrIncendios" HorizontalAlignment="Left" Height="230" Margin="82,103,0,0" VerticalAlignment="Top" Width="640" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
+        <DataGrid x:Name="dgrIncendios" HorizontalAlignment="Left" Height="230" Margin="-29,103,-30,0" VerticalAlignment="Top" Width="859" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
         </DataGrid>
         <Button Content="Modificar Incendio" x:Name="btnModificarIncendio" HorizontalAlignment="Left" Height="48" Margin="291,360,0,0" VerticalAlignment="Top" Width="200" Foreground="#FF3679CD" FontSize="16" FontFamily="Lucida Sans Unicode" Command="clases:Comandos.modificarIncendio">
             <Button.Background>

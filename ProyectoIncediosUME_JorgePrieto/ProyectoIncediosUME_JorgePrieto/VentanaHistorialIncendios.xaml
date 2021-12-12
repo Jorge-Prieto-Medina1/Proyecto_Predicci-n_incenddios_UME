@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:ProyectoIncediosUME_JorgePrieto"
            xmlns:clases="clr-namespace:ProyectoIncediosUME_JorgePrieto.Clases"
         mc:Ignorable="d"
-        Title="Ventana Registros Incendios" Height="469.637" Width="800" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#EEDF49" WindowStyle="None" Loaded="Window_Loaded">
+        Title="Ventana Registros Incendios" Height="470" Width="900" WindowStartupLocation="CenterScreen" ResizeMode="NoResize" Background="#EEDF49" WindowStyle="None" Loaded="Window_Loaded">
     <Window.CommandBindings>
         <CommandBinding Command="clases:Comandos.volverAtras" CanExecute="Comprueba" Executed="Salir"/>
         <CommandBinding Command="clases:Comandos.buscar" CanExecute="Comprueba" Executed="Buscar"/>
@@ -30,7 +30,7 @@
             </Button.Background>
         </Button>
         <TextBlock HorizontalAlignment="Left" Height="45" Margin="82,31,0,0" TextWrapping="Wrap" Text="Historial de registros de incendios" VerticalAlignment="Top" Width="481" FontSize="28" Foreground="#FFEE4958"  FontFamily="Lucida Sans Unicode" />
-        <DataGrid x:Name="dgrIncendios" HorizontalAlignment="Left" Height="230" Margin="82,100,0,0" VerticalAlignment="Top" Width="640" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
+        <DataGrid x:Name="dgrIncendios" HorizontalAlignment="Left" Height="230" Margin="-29,100,-32,0" VerticalAlignment="Top" Width="861" IsReadOnly="True" SelectionMode="Single" SelectionUnit="FullRow" FontFamily="Lucida Sans Unicode" ColumnWidth="*">
         </DataGrid>
         <ComboBox x:Name="cmbProvincias" HorizontalAlignment="Left" Height="29" Margin="176,348,0,0" VerticalAlignment="Top" Width="160" FontSize="18" SelectionChanged="cmbProvincias_SelectionChanged"/>
         <TextBlock HorizontalAlignment="Left" Height="30" Margin="50,405,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="97" FontSize="20" Foreground="#EE4958"  FontFamily="Lucida Sans Unicode" RenderTransformOrigin="0.505,-0.167"><Run Text="L"/><Run Text="ocalidad:"/></TextBlock>

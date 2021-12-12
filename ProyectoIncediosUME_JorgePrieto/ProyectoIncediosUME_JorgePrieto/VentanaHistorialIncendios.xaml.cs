@@ -65,7 +65,7 @@ namespace ProyectoIncediosUME_JorgePrieto
 
 
                 var incendios = from busqueda in BaseDeDatos.Incendio
-                                select new { busqueda.idLocalidad, busqueda.idIncendio, busqueda.fechaDeInicio, busqueda.fechaDeExtinción };
+                                select new { busqueda.idLocalidad, busqueda.idIncendio, busqueda.temperaturaMedia, busqueda.humedadMedia, busqueda.hectareasQuemadas , busqueda.fechaDeInicio, busqueda.fechaDeExtinción };
 
 
 
@@ -99,7 +99,7 @@ namespace ProyectoIncediosUME_JorgePrieto
                     {
                         int idLocalidad = incendio.idLocalidad;
                         String[] nombres = consultas.buscarNombreLocalidadPrivincia(idLocalidad);
-                        IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
+                        IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.temperaturaMedia.Value, incendio.humedadMedia.Value, incendio.hectareasQuemadas.Value, incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
                         if (incendioNuevo.nombreProvincia == Provincia)
                         {
                             this.listaDGRIncendios.Add(incendioNuevo);
@@ -113,7 +113,7 @@ namespace ProyectoIncediosUME_JorgePrieto
                     {
                         int idLocalidad = incendio.idLocalidad;
                         String[] nombres = consultas.buscarNombreLocalidadPrivincia(idLocalidad);
-                        IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
+                        IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.temperaturaMedia.Value, incendio.humedadMedia.Value, incendio.hectareasQuemadas.Value, incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
                         this.listaDGRIncendios.Add(incendioNuevo);
                     }
                 }
@@ -122,8 +122,11 @@ namespace ProyectoIncediosUME_JorgePrieto
                 this.dgrIncendios.ItemsSource = listaDGRIncendios;
                 dgrIncendios.Columns[0].Header = "Nombre de la Provincia";
                 dgrIncendios.Columns[1].Header = "Nombre de la Localidad";
-                dgrIncendios.Columns[2].Header = "Fecha de inicio";
-                dgrIncendios.Columns[3].Header = "Fecha de extinción";
+                dgrIncendios.Columns[2].Header = "Temperatura Media";
+                dgrIncendios.Columns[3].Header = "Humedad media";
+                dgrIncendios.Columns[4].Header = "Hectareas quemadas";
+                dgrIncendios.Columns[5].Header = "Fecha de inicio";
+                dgrIncendios.Columns[6].Header = "Fecha de extinción";
 
 
             }
@@ -141,7 +144,6 @@ namespace ProyectoIncediosUME_JorgePrieto
         {
             List<String> listaProvincias = consultas.cargarProvincias();
             this.cmbProvincias.ItemsSource = listaProvincias;
-            this.cmbProvincias.SelectedIndex = 0;
         }
 
         private void cargarCmbLocalidades()
@@ -165,14 +167,17 @@ namespace ProyectoIncediosUME_JorgePrieto
             {
                 int idLocalidad = incendio.idLocalidad;
                 String[] nombres = consultas.buscarNombreLocalidadPrivincia(idLocalidad);
-                IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
+                IncendiosAVisualizar incendioNuevo = new IncendiosAVisualizar(nombres[0], nombres[1], incendio.temperaturaMedia.Value, incendio.humedadMedia.Value, incendio.hectareasQuemadas.Value, incendio.fechaDeInicio.ToString().Substring(0, 10), incendio.fechaDeExtinción.ToString().Substring(0, 10));
                 this.listaDGRIncendios.Add(incendioNuevo);
             }
             this.dgrIncendios.ItemsSource = listaDGRIncendios;
-            dgrIncendios.Columns[0].Header = "Nombre de la Provincia";
-            dgrIncendios.Columns[1].Header = "Nombre de la Localidad";
-            dgrIncendios.Columns[2].Header = "Fecha de inicio";
-            dgrIncendios.Columns[3].Header = "Fecha de extinción";
+            dgrIncendios.Columns[0].Header = "Provincia";
+            dgrIncendios.Columns[1].Header = "Localidad";
+            dgrIncendios.Columns[2].Header = "Temperatura Media";
+            dgrIncendios.Columns[3].Header = "Humedad Media";
+            dgrIncendios.Columns[4].Header = "Hectareas";
+            dgrIncendios.Columns[5].Header = "Fecha de inicio";
+            dgrIncendios.Columns[6].Header = "Fecha de extinción";
 
         }
     }
